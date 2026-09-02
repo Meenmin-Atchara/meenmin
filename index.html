@@ -1,134 +1,211 @@
-
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEEN - Atchara | Personal Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Meen Atchara - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #6366f1;
-            --primary-glow: rgba(99, 102, 241, 0.2);
-            --bg: #f8fafc;
-            --card-bg: rgba(255, 255, 255, 0.7);
-        }
-
-        * { box-sizing: border-box; transition: all 0.3s ease; }
-
-        body {
-            margin: 0;
-            font-family: 'Kanit', sans-serif;
-            background-color: var(--bg);
-            background-image: radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.1) 0px, transparent 50%),
-                              radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.1) 0px, transparent 50%);
-            color: #1e293b;
-            line-height: 1.6;
-        }
-
-        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-
-        /* Hero Section */
-        .hero {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            padding: 60px;
-            background: var(--card-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.5);
-            border-radius: 40px;
-            margin-bottom: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-        }
-
-        .hero h1 { font-size: 3rem; margin: 0; background: linear-gradient(to right, #6366f1, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
-        .photo-box img { 
-            width: 200px; height: 200px; border-radius: 50px; 
-            object-fit: cover; border: 4px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
-        }
-
-        /* Sections */
-        .section { margin-bottom: 50px; }
-        h2 { font-size: 2rem; display: flex; align-items: center; gap: 15px; }
-        h2 span { color: var(--primary); font-size: 1.2rem; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        
-        .card {
-            padding: 30px;
-            background: white;
-            border-radius: 25px;
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.03);
-        }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 30px rgba(0,0,0,0.1); }
-
-        /* Timeline */
-        .timeline-item { 
-            padding: 20px; border-left: 4px solid var(--primary); 
-            background: rgba(255,255,255,0.5); margin-bottom: 10px; border-radius: 0 15px 15px 0;
-        }
-
-        /* Buttons */
-        .social-links a {
-            display: inline-block; padding: 12px 25px; background: #1e293b;
-            color: white; border-radius: 15px; text-decoration: none; font-weight: 600;
-        }
-        .social-links a:hover { background: var(--primary); }
-
-        @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; padding: 30px; }
-            .hero h1 { font-size: 2rem; }
-        }
+        body { font-family: 'Prompt', sans-serif; }
     </style>
 </head>
-<body>
+<body class="bg-neutral-950 text-neutral-100 antialiased selection:bg-red-600 selection:text-white">
 
-    <div class="container">
-        <header class="hero">
-            <div class="photo-box">
-                <img src="https://ui-avatars.com/api/?name=Meen+Atchara&size=200&background=6366f1&color=fff" alt="Profile">
-            </div>
-            <div>
-                <h1>มีน อัจฉรา</h1>
-                <p style="font-size: 1.2rem; color: #64748b;">Computer Engineering & IT Specialist</p>
-                <div class="pill-group">
-                    <span style="background: #e0e7ff; padding: 5px 15px; border-radius: 20px; color: #4338ca;">#Developer</span>
-                    <span style="background: #f3e8ff; padding: 5px 15px; border-radius: 20px; color: #7e22ce;">#DataAnalysis</span>
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#home" class="font-bold text-lg tracking-wider text-white">MEEN<span class="text-red-600">.</span></a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-neutral-400">
+                <a href="#home" class="hover:text-red-500 transition">Home</a>
+                <a href="#experience" class="hover:text-red-500 transition">Experience</a>
+                <a href="#education" class="hover:text-red-500 transition">Education</a>
+                <a href="#skills" class="hover:text-red-500 transition">Skills</a>
+                <a href="#projects" class="hover:text-red-500 transition">Projects</a>
+                <a href="#contact" class="hover:text-red-500 transition">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. Home Section (อธิบายตัวเอง งานอดิเรก จุดแข็ง) -->
+    <section id="home" class="pt-32 pb-20 px-6 max-w-5xl mx-auto min-h-screen flex flex-col justify-center">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+            <div class="md:col-span-2 space-y-6">
+                <span class="inline-block px-3 py-1 bg-red-950/60 border border-red-800/50 text-red-400 text-xs font-semibold rounded-full uppercase tracking-wider">
+                    Assistant Business Analyst / Developer
+                </span>
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-white">
+                    สวัสดีครับ, ผม <span class="text-red-600">มีน อัจฉรา กล้าขยัน</span>
+                </h1>
+                <p class="text-neutral-400 text-lg leading-relaxed">
+                    จบจากคณะวิศวกรรมศาสตร์ สาขาวิศวกรรมคอมพิวเตอร์ มทร.อีสาน วิทยาเขตขอนแก่น ทำงานและอาศัยอยู่ในจังหวัดขอนแก่น ชอบการวิเคราะห์ ออกแบบ และพัฒนาระบบ พร้อมเรียนรู้สิ่งใหม่ๆ อยู่เสมอ
+                </p>
+                
+                <div class="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-4 rounded-xl bg-neutral-900 border border-neutral-800">
+                        <h3 class="text-sm font-semibold text-red-500 uppercase tracking-wide mb-1">จุดแข็ง (Strengths)</h3>
+                        <p class="text-sm text-neutral-300">เรียนรู้ไว แก้ไขปัญหาเฉพาะหน้าได้ดี ทำงานค่อนข้างละเอียด และชอบศึกษาอะไรใหม่ๆ</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-neutral-900 border border-neutral-800">
+                        <h3 class="text-sm font-semibold text-red-500 uppercase tracking-wide mb-1">งานอดิเรก & สิ่งที่ชอบ</h3>
+                        <p class="text-sm text-neutral-300">เล่นเกม ฟังเพลง เล่นกีต้าร์ ร้องเพลง ดูหนัง ออกกำลังกาย (Gym/วิ่ง) ชอบรถ ดนตรี และการเดินป่า</p>
+                    </div>
                 </div>
             </div>
-        </header>
-
-        <section class="section">
-            <h2><span>01</span> เกี่ยวกับฉัน</h2>
-            <div class="card">
-                <p>วิศวกรคอมพิวเตอร์ที่หลงใหลในการวิเคราะห์ ออกแบบ และพัฒนาระบบ สนุกกับการแก้ปัญหาและไม่หยุดที่จะเรียนรู้เทคโนโลยีใหม่ๆ เพื่อปรับปรุงการทำงานให้มีประสิทธิภาพสูงสุด</p>
+            
+            <div class="flex justify-center">
+                <div class="w-48 h-48 md:w-64 md:h-64 rounded-2xl bg-gradient-to-br from-red-600 to-neutral-900 p-1 shadow-2xl shadow-red-950/40">
+                    <div class="w-full h-full bg-neutral-900 rounded-2xl flex items-center justify-center text-neutral-500 text-sm">
+                        [ รูปโปรไฟล์ ]
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section">
-            <h2><span>02</span> ทักษะและความถนัด</h2>
-            <div class="grid">
-                <div class="card"><h3>ระบบงาน</h3><p>วิเคราะห์ ออกแบบระบบ และจัดการข้อมูลในฐานข้อมูล</p></div>
-                <div class="card"><h3>งาน IT</h3><p>สนับสนุนงาน IT แก้ไขปัญหาและทดสอบระบบ (QA)</p></div>
+    <!-- 2. Experience Section -->
+    <section id="experience" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
+        <h2 class="text-2xl font-bold text-white mb-10 flex items-center gap-3">
+            <span class="w-3 h-3 bg-red-600 rounded-full"></span> ประสบการณ์การทำงาน
+        </h2>
+        <div class="space-y-6 border-l-2 border-neutral-800 pl-6 ml-2">
+            <div class="relative">
+                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-red-600 border-4 border-neutral-950"></div>
+                <span class="text-xs text-red-500 font-semibold">ปัจจุบัน</span>
+                <h3 class="text-lg font-semibold text-white mt-1">Assistant Business Analyst / เจ้าหน้าที่ MIS ฝ่ายขายต่างประเทศ</h3>
+                <p class="text-sm text-neutral-400">บริษัท ขอนแก่นแหอวน จำกัด สาขาบวร l ขอนแก่น</p>
             </div>
-        </section>
-
-        <section class="section">
-            <h2><span>03</span> ประสบการณ์</h2>
-            <div class="timeline-item"><strong>Assistant BA / MIS</strong> - ขอนแก่นแหอวน</div>
-            <div class="timeline-item"><strong>Programmer</strong> - โรงงานทออวนเดชาพานิช</div>
-        </section>
-
-        <section class="section" style="text-align: center;">
-            <h2>ช่องทางติดต่อ</h2>
-            <div class="social-links">
-                <a href="https://m.facebook.com/MeenMinMaewNoi/" target="_blank">Facebook</a>
-                <a href="https://www.youtube.com/user/Minnie1839" target="_blank">YouTube</a>
+            <div class="relative">
+                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-neutral-700 border-4 border-neutral-950"></div>
+                <h3 class="text-lg font-semibold text-white mt-1">โปรแกรมเมอร์ (Programmer)</h3>
+                <p class="text-sm text-neutral-400">บริษัท โรงงานทออวนเดชาพานิช จำกัด l ขอนแก่น</p>
             </div>
-        </section>
-    </div>
+            <div class="relative">
+                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-neutral-700 border-4 border-neutral-950"></div>
+                <h3 class="text-lg font-semibold text-white mt-1">กราฟฟิก (Graphic Design)</h3>
+                <p class="text-sm text-neutral-400">บางกอก เอ การ์ด l ขอนแก่น</p>
+            </div>
+            <div class="relative">
+                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-neutral-700 border-4 border-neutral-950"></div>
+                <h3 class="text-lg font-semibold text-white mt-1">IT Support (นักศึกษาฝึกงาน)</h3>
+                <p class="text-sm text-neutral-400">บริษัท โฆษะโฮลดิ้ง จำกัด l ขอนแก่น</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Education Section -->
+    <section id="education" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
+        <h2 class="text-2xl font-bold text-white mb-10 flex items-center gap-3">
+            <span class="w-3 h-3 bg-red-600 rounded-full"></span> การศึกษา
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-6 rounded-xl bg-neutral-900/60 border border-neutral-800">
+                <span class="text-xs text-red-500 font-semibold">ปริญญาตรี</span>
+                <h3 class="text-lg font-bold text-white mt-1">วศ.บ. คอมพิวเตอร์</h3>
+                <p class="text-sm text-neutral-400 mt-2">มหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน วิทยาเขตขอนแก่น</p>
+            </div>
+            <div class="p-6 rounded-xl bg-neutral-900/60 border border-neutral-800">
+                <span class="text-xs text-red-500 font-semibold">มัธยมศึกษาตอนปลาย</span>
+                <h3 class="text-lg font-bold text-white mt-1">สายวิทย์ - คณิต</h3>
+                <p class="text-sm text-neutral-400 mt-2">โรงเรียนกัลยาณวัตร จ.ขอนแก่น</p>
+            </div>
+            <div class="p-6 rounded-xl bg-neutral-900/60 border border-neutral-800">
+                <span class="text-xs text-red-500 font-semibold">มัธยมศึกษาตอนต้น</span>
+                <h3 class="text-lg font-bold text-white mt-1">สามัญ</h3>
+                <p class="text-sm text-neutral-400 mt-2">โรงเรียนกัลยาณวัตร จ.ขอนแก่น</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Skills Section -->
+    <section id="skills" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
+        <h2 class="text-2xl font-bold text-white mb-10 flex items-center gap-3">
+            <span class="w-3 h-3 bg-red-600 rounded-full"></span> ทักษะและความถนัด
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-5 rounded-xl bg-neutral-900 border border-neutral-800">
+                <h3 class="font-semibold text-white mb-2">System Analysis & Design</h3>
+                <p class="text-sm text-neutral-400">การวิเคราะห์ ออกแบบ และพัฒนาระบบตามความต้องการ User</p>
+            </div>
+            <div class="p-5 rounded-xl bg-neutral-900 border border-neutral-800">
+                <h3 class="font-semibold text-white mb-2">Testing & Quality Assurance</h3>
+                <p class="text-sm text-neutral-400">ทดสอบระบบตาม Test case รวมถึงการออกแบบเคสที่ใช้ทดสอบ (Manual Testing)</p>
+            </div>
+            <div class="p-5 rounded-xl bg-neutral-900 border border-neutral-800">
+                <h3 class="font-semibold text-white mb-2">IT Support & Troubleshooting</h3>
+                <p class="text-sm text-neutral-400">ตรวจสอบแก้ไขปัญหาระบบให้ User รวมถึงอุปกรณ์ IT ต่างๆ</p>
+            </div>
+            <div class="p-5 rounded-xl bg-neutral-900 border border-neutral-800">
+                <h3 class="font-semibold text-white mb-2">Database & Reporting</h3>
+                <p class="text-sm text-neutral-400">การจัดการข้อมูลในฐานข้อมูล เช่น ดึงข้อมูล จัดทำรายงาน วิเคราะห์ปัญหา</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Projects Section (ช่องเสนอผลงาน) -->
+    <section id="projects" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
+        <h2 class="text-2xl font-bold text-white mb-10 flex items-center gap-3">
+            <span class="w-3 h-3 bg-red-600 rounded-full"></span> ตัวอย่างผลงาน (Projects)
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Project Card 1 -->
+            <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between hover:border-red-600/50 transition">
+                <div>
+                    <div class="h-40 bg-neutral-950 rounded-lg mb-4 flex items-center justify-center text-neutral-600 text-sm">
+                        [ รูปภาพพรีวิวผลงาน ]
+                    </div>
+                    <span class="text-xs text-red-500 font-semibold uppercase">System Development</span>
+                    <h3 class="text-xl font-semibold text-white mt-1">ระบบวิเคราะห์ข้อมูลการขาย</h3>
+                    <p class="text-neutral-400 text-sm mt-2">ระบบดึงข้อมูลและจัดการฐานข้อมูลเพื่อจัดทำรายงานและวิเคราะห์ปัญหาทางธุรกิจ</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-neutral-800 flex justify-between items-center">
+                    <span class="text-xs bg-neutral-800 text-neutral-300 px-2.5 py-1 rounded">Database / MIS</span>
+                    <a href="#" class="text-sm font-medium text-red-500 hover:text-red-400">ดูรายละเอียด →</a>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between hover:border-red-600/50 transition">
+                <div>
+                    <div class="h-40 bg-neutral-950 rounded-lg mb-4 flex items-center justify-center text-neutral-600 text-sm">
+                        [ รูปภาพพรีวิวผลงาน ]
+                    </div>
+                    <span class="text-xs text-red-500 font-semibold uppercase">Testing & Support</span>
+                    <h3 class="text-xl font-semibold text-white mt-1">การออกแบบ Test Case และทดสอบระบบ</h3>
+                    <p class="text-neutral-400 text-sm mt-2">การเขียนเคสทดสอบ ตรวจสอบระบบ และแก้ปัญหาการใช้งานให้ผู้ใช้ได้อย่างมีประสิทธิภาพ</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-neutral-800 flex justify-between items-center">
+                    <span class="text-xs bg-neutral-800 text-neutral-300 px-2.5 py-1 rounded">Manual Testing</span>
+                    <a href="#" class="text-sm font-medium text-red-500 hover:text-red-400">ดูรายละเอียด →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Contact Section -->
+    <section id="contact" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
+        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+            <span class="w-3 h-3 bg-red-600 rounded-full"></span> ช่องทางการติดต่อ
+        </h2>
+        <p class="text-neutral-400 mb-8">สามารถติดตามหรือติดต่อพูดคุยได้ผ่านช่องทางด้านล่างนี้ครับ</p>
+        <div class="flex flex-wrap gap-4">
+            <a href="https://m.facebook.com/MeenMinMaewNoi/" target="_blank" class="px-5 py-2.5 bg-neutral-900 border border-neutral-800 hover:border-red-600 rounded-lg text-sm font-medium transition text-white">
+                Facebook Gaming
+            </a>
+            <a href="https://www.youtube.com/user/Minnie1839" target="_blank" class="px-5 py-2.5 bg-neutral-900 border border-neutral-800 hover:border-red-600 rounded-lg text-sm font-medium transition text-white">
+                YouTube
+            </a>
+            <a href="https://www.tiktok.com/@maewnoi" target="_blank" class="px-5 py-2.5 bg-neutral-900 border border-neutral-800 hover:border-red-600 rounded-lg text-sm font-medium transition text-white">
+                TikTok
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-xs text-neutral-600 border-t border-neutral-900">
+        © 2026 Meen Atchara. Built with HTML & Tailwind CSS.
+    </footer>
+
 </body>
 </html>
