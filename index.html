@@ -9,6 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Prompt', sans-serif; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hobby-content {
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
     </style>
 </head>
 <body class="bg-neutral-950 text-neutral-100 antialiased selection:bg-red-600 selection:text-white">
@@ -16,9 +23,10 @@
     <!-- Navigation Bar -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800">
         <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#home" class="font-bold text-lg tracking-wider text-white">MEEN<span class="text-red-600">.</span></a>
+            <a href="#home" class="font-bold text-lg tracking-wider text-white"> <span class="text-red-600">#</span> MEEN ATCHARA </a>
             <nav class="hidden md:flex space-x-8 text-sm font-medium text-neutral-400">
                 <a href="#home" class="hover:text-red-500 transition">Home</a>
+                <a href="#hobbies" class="hover:text-red-500 transition">Hobbies</a>
                 <a href="#experience" class="hover:text-red-500 transition">Experience</a>
                 <a href="#education" class="hover:text-red-500 transition">Education</a>
                 <a href="#skills" class="hover:text-red-500 transition">Skills</a>
@@ -28,8 +36,8 @@
         </div>
     </header>
 
-    <!-- 1. Home Section (อธิบายตัวเอง งานอดิเรก จุดแข็ง) -->
-    <section id="home" class="pt-32 pb-20 px-6 max-w-5xl mx-auto min-h-screen flex flex-col justify-center">
+    <!-- 1. Home Section -->
+    <section id="home" class="pt-32 pb-16 px-6 max-w-5xl mx-auto min-h-[85vh] flex flex-col justify-center">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
             <div class="md:col-span-2 space-y-6">
                 <span class="inline-block px-3 py-1 bg-red-950/60 border border-red-800/50 text-red-400 text-xs font-semibold rounded-full uppercase tracking-wider">
@@ -42,28 +50,58 @@
                     จบจากคณะวิศวกรรมศาสตร์ สาขาวิศวกรรมคอมพิวเตอร์ มทร.อีสาน วิทยาเขตขอนแก่น ทำงานและอาศัยอยู่ในจังหวัดขอนแก่น ชอบการวิเคราะห์ ออกแบบ และพัฒนาระบบ พร้อมเรียนรู้สิ่งใหม่ๆ อยู่เสมอ
                 </p>
                 
-                <div class="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="pt-2">
                     <div class="p-4 rounded-xl bg-neutral-900 border border-neutral-800">
                         <h3 class="text-sm font-semibold text-red-500 uppercase tracking-wide mb-1">จุดแข็ง (Strengths)</h3>
                         <p class="text-sm text-neutral-300">เรียนรู้ไว แก้ไขปัญหาเฉพาะหน้าได้ดี ทำงานค่อนข้างละเอียด และชอบศึกษาอะไรใหม่ๆ</p>
-                    </div>
-                    <div class="p-4 rounded-xl bg-neutral-900 border border-neutral-800">
-                        <h3 class="text-sm font-semibold text-red-500 uppercase tracking-wide mb-1">งานอดิเรก & สิ่งที่ชอบ</h3>
-                        <p class="text-sm text-neutral-300">เล่นเกม ฟังเพลง เล่นกีต้าร์ ร้องเพลง ดูหนัง ออกกำลังกาย (Gym/วิ่ง) ชอบรถ ดนตรี และการเดินป่า</p>
                     </div>
                 </div>
             </div>
             
             <div class="flex justify-center">
                 <div class="w-48 h-48 md:w-64 md:h-64 rounded-2xl bg-gradient-to-br from-red-600 to-neutral-900 p-1 shadow-2xl shadow-red-950/40">
-                    <!-- ดึงรูปจากโฟลเดอร์ assets มาแสดงผล -->
+                    <div class="w-full h-full bg-neutral-900 rounded-2xl flex items-center justify-center text-neutral-500 text-sm overflow-hidden">
                     <img src="assets/profile.jpg" alt="Profile" class="w-full h-full object-cover rounded-2xl">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 2. Experience Section -->
+    <!-- 2. Hobbies Section (ดีไซน์หัวข้อใหญ่เด่นแบบเรฟ + ปุ่มควบคุมมุมขวาบน + อิโมจิหลังหัวข้อ) -->
+    <section id="hobbies" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
+        <!-- ส่วนหัวข้อใหญ่เด่นสไตล์เรฟ และปุ่มคอนโทรลขวาบน -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+            <div>
+                <span class="text-xs text-red-500 font-semibold uppercase tracking-widest block mb-2">What I Like</span>
+                <h2 class="text-4xl md:text-6xl font-black tracking-tight text-white leading-none">
+                    Hobbies <br><span class="text-red-600">in between.</span>
+                </h2>
+            </div>
+            <div class="flex items-center gap-6 self-end md:self-auto">
+                <span id="slide-counter" class="text-sm text-neutral-400 font-mono tracking-wider">01 / 04</span>
+                <div class="flex gap-2">
+                    <button onclick="changeHobby(-1)" class="w-12 h-12 rounded-full border border-neutral-800 hover:border-red-600 hover:text-red-500 flex items-center justify-center text-white transition cursor-pointer text-lg">&#10094;</button>
+                    <button onclick="changeHobby(1)" class="w-12 h-12 rounded-full border border-neutral-800 hover:border-red-600 hover:text-red-500 flex items-center justify-center text-white transition cursor-pointer text-lg">&#10095;</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- พื้นที่แสดงเนื้อหา Grid 4 ช่อง และข้อมูลฝั่งขวา -->
+        <div id="hobby-display-container" class="hobby-content">
+            <!-- ข้อมูลจะถูกเรนเดอร์สลับเปลี่ยนที่นี่ -->
+        </div>
+
+        <!-- แถบสถานะด้านล่าง -->
+        <div class="grid grid-cols-4 gap-3 mt-10">
+            <div id="bar-0" class="h-1 bg-red-600 rounded-full transition-all duration-300"></div>
+            <div id="bar-1" class="h-1 bg-neutral-800 rounded-full transition-all duration-300"></div>
+            <div id="bar-2" class="h-1 bg-neutral-800 rounded-full transition-all duration-300"></div>
+            <div id="bar-3" class="h-1 bg-neutral-800 rounded-full transition-all duration-300"></div>
+        </div>
+    </section>
+
+    <!-- 3. Experience Section -->
     <section id="experience" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
         <h2 class="text-2xl font-bold text-white mb-10 flex items-center gap-3">
             <span class="w-3 h-3 bg-red-600 rounded-full"></span> ประสบการณ์การทำงาน
@@ -93,7 +131,7 @@
         </div>
     </section>
 
-    <!-- 3. Education Section -->
+    <!-- 4. Education Section -->
     <section id="education" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
         <h2 class="text-2xl font-bold text-white mb-10 flex items-center gap-3">
             <span class="w-3 h-3 bg-red-600 rounded-full"></span> การศึกษา
@@ -117,7 +155,7 @@
         </div>
     </section>
 
-    <!-- 4. Skills Section -->
+    <!-- 5. Skills Section -->
     <section id="skills" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
         <h2 class="text-2xl font-bold text-white mb-10 flex items-center gap-3">
             <span class="w-3 h-3 bg-red-600 rounded-full"></span> ทักษะและความถนัด
@@ -142,13 +180,12 @@
         </div>
     </section>
 
-    <!-- 5. Projects Section (ช่องเสนอผลงาน) -->
+    <!-- 6. Projects Section -->
     <section id="projects" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
         <h2 class="text-2xl font-bold text-white mb-10 flex items-center gap-3">
             <span class="w-3 h-3 bg-red-600 rounded-full"></span> ตัวอย่างผลงาน (Projects)
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Project Card 1 -->
             <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between hover:border-red-600/50 transition">
                 <div>
                     <div class="h-40 bg-neutral-950 rounded-lg mb-4 flex items-center justify-center text-neutral-600 text-sm">
@@ -164,7 +201,6 @@
                 </div>
             </div>
 
-            <!-- Project Card 2 -->
             <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between hover:border-red-600/50 transition">
                 <div>
                     <div class="h-40 bg-neutral-950 rounded-lg mb-4 flex items-center justify-center text-neutral-600 text-sm">
@@ -182,7 +218,7 @@
         </div>
     </section>
 
-    <!-- 6. Contact Section -->
+    <!-- 7. Contact Section -->
     <section id="contact" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
         <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
             <span class="w-3 h-3 bg-red-600 rounded-full"></span> ช่องทางการติดต่อ
@@ -192,22 +228,106 @@
             <a href="mailto:018atchara.kl@gmail.com" class="px-5 py-2.5 bg-neutral-900 border border-neutral-800 hover:border-red-600 rounded-lg text-sm font-medium transition text-white flex items-center gap-2">
                 <span>📧</span> 018atchara.kl@gmail.com
             </a>
-            <a href="https://m.facebook.com/MeenMinMaewNoi/" target="_blank" class="px-5 py-2.5 bg-neutral-900 border border-neutral-800 hover:border-red-600 rounded-lg text-sm font-medium transition text-white flex items-center gap-2">
-                <span>📘</span> Facebook Gaming
+            <a href="https://m.facebook.com/MeenMinMaewNoi/" target="_blank" class="px-5 py-2.5 bg-neutral-900 border border-neutral-800 hover:border-red-600 rounded-lg text-sm font-medium transition text-white">
+                Facebook Gaming
             </a>
-            <a href="https://www.youtube.com/user/Minnie1839" target="_blank" class="px-5 py-2.5 bg-neutral-900 border border-neutral-800 hover:border-red-600 rounded-lg text-sm font-medium transition text-white flex items-center gap-2">
-                <span>▶️</span> YouTube
+            <a href="https://www.youtube.com/user/Minnie1839" target="_blank" class="px-5 py-2.5 bg-neutral-900 border border-neutral-800 hover:border-red-600 rounded-lg text-sm font-medium transition text-white">
+                YouTube
             </a>
-            <a href="https://www.tiktok.com/@maewnoi" target="_blank" class="px-5 py-2.5 bg-neutral-900 border border-neutral-800 hover:border-red-600 rounded-lg text-sm font-medium transition text-white flex items-center gap-2">
-                <span>🎵</span> TikTok
+            <a href="https://www.tiktok.com/@maewnoi" target="_blank" class="px-5 py-2.5 bg-neutral-900 border border-neutral-800 hover:border-red-600 rounded-lg text-sm font-medium transition text-white">
+                TikTok
             </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="py-8 text-center text-xs text-neutral-600 border-t border-neutral-900">
-        © 2026 Meen Atchara. Built with HTML & Tailwind CSS.
+        © 2023 By Meenmin-Atchara.
     </footer>
 
+    <!-- JavaScript ระบบสไลด์พร้อมอิโมจิหลังหัวข้อ -->
+    <script>
+        const hobbyCategories = [
+            {
+                title: "ขับรถ & ท่องเที่ยว 🚗",
+                desc: "ความสุขหลังพวงมาลัยและการออกเดินทางไปสัมผัสบรรยากาศธรรมชาติใหม่ๆ",
+                images: ["[ รูปขับรถ 1 ]", "[ รูปขับรถ 2 ]", "[ รูปเที่ยว 1 ]", "[ รูปเที่ยว 2 ]"]
+            },
+            {
+                title: "เล่นดนตรี 🎸",
+                desc: "ผ่อนคลายไปกับเสียงกีต้าร์และท่วงทำนองในยามว่าง",
+                images: ["[ รูปดนตรี 1 ]", "[ รูปดนตรี 2 ]", "[ รูปดนตรี 3 ]", "[ รูปดนตรี 4 ]"]
+            },
+            {
+                title: "ร้องเพลง 🎤",
+                desc: "ปลดปล่อยอารมณ์และความสนุกผ่านเสียงเพลง",
+                images: ["[ รูปร้องเพลง 1 ]", "[ รูปร้องเพลง 2 ]", "[ รูปร้องเพลง 3 ]", "[ รูปร้องเพลง 4 ]"]
+            },
+            {
+                title: "กิจกรรมอื่นๆ 🌲",
+                desc: "ออกกำลังกายเข้ายิม วิ่ง และสัมผัสป่าเขาธรรมชาติ",
+                images: ["[ รูปออกกำลังกาย 1 ]", "[ รูปออกกำลังกาย 2 ]", "[ รูปเดินป่า 1 ]", "[ รูปเดินป่า 2 ]"]
+            }
+        ];
+
+        let currentCategoryIndex = 0;
+
+        function renderHobbySection() {
+            const container = document.getElementById('hobby-display-container');
+            const counter = document.getElementById('slide-counter');
+            const currentData = hobbyCategories[currentCategoryIndex];
+
+            counter.textContent = `0${currentCategoryIndex + 1} / 0${hobbyCategories.length}`;
+
+            for (let i = 0; i < hobbyCategories.length; i++) {
+                const bar = document.getElementById(`bar-${i}`);
+                if (i === currentCategoryIndex) {
+                    bar.className = "h-1 bg-red-600 rounded-full transition-all duration-300";
+                } else {
+                    bar.className = "h-1 bg-neutral-800 rounded-full transition-all duration-300";
+                }
+            }
+
+            container.innerHTML = `
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <!-- ฝั่ง Grid 4 รูป -->
+                    <div class="lg:col-span-8 grid grid-cols-2 gap-4">
+                        <div class="aspect-[4/3] bg-neutral-900 border border-neutral-800 rounded-2xl flex items-center justify-center text-neutral-600 text-sm overflow-hidden p-2 shadow-inner">
+                            <span class="text-center">${currentData.images[0]}</span>
+                        </div>
+                        <div class="aspect-[4/3] bg-neutral-900 border border-neutral-800 rounded-2xl flex items-center justify-center text-neutral-600 text-sm overflow-hidden p-2 shadow-inner">
+                            <span class="text-center">${currentData.images[1]}</span>
+                        </div>
+                        <div class="aspect-[4/3] bg-neutral-900 border border-neutral-800 rounded-2xl flex items-center justify-center text-neutral-600 text-sm overflow-hidden p-2 shadow-inner">
+                            <span class="text-center">${currentData.images[2]}</span>
+                        </div>
+                        <div class="aspect-[4/3] bg-neutral-900 border border-neutral-800 rounded-2xl flex items-center justify-center text-neutral-600 text-sm overflow-hidden p-2 shadow-inner">
+                            <span class="text-center">${currentData.images[3]}</span>
+                        </div>
+                    </div>
+
+                    <!-- ฝั่งข้อความคำอธิบาย -->
+                    <div class="lg:col-span-4 space-y-4 lg:pl-6 border-l border-neutral-800/60">
+                        <span class="text-xs text-red-500 font-semibold uppercase tracking-wider">Hobby Showcase</span>
+                        <h3 class="text-2xl font-bold text-white">${currentData.title}</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed">${currentData.desc}</p>
+                        <p class="text-xs text-neutral-600 pt-2">* สามารถเปลี่ยนรูปภาพจริงในอนาคตได้ที่โฟลเดอร์ images</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function changeHobby(direction) {
+            currentCategoryIndex += direction;
+            if (currentCategoryIndex < 0) {
+                currentCategoryIndex = hobbyCategories.length - 1;
+            } else if (currentCategoryIndex >= hobbyCategories.length) {
+                currentCategoryIndex = 0;
+            }
+            renderHobbySection();
+        }
+
+        renderHobbySection();
+    </script>
 </body>
 </html>
