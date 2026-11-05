@@ -1,9 +1,18 @@
 {
-  "intro": "สามารถติดตามหรือติดต่อพูดคุยได้ผ่านช่องทางด้านล่างนี้ค่ะ",
+  "intro": "สามารถติดตามหรือติดต่อได้ผ่านช่องทางด้านล่างนี้ค่ะ",
   "email": "018atchara.kl@gmail.com",
   "links": [
-    { "label": "Facebook Gaming", "url": "https://m.facebook.com/MeenMinMaewNoi/" },
-    { "label": "YouTube", "url": "https://www.youtube.com/user/Minnie1839" },
-    { "label": "TikTok", "url": "https://www.tiktok.com/@maewnoi" }
+    {
+      "label": "Facebook Gaming",
+      "url": "https://m.facebook.com/MeenMinMaewNoi/"
+    },
+    {
+      "label": "YouTube",
+      "url": "https://www.youtube.com/user/Minnie1839"
+    },
+    {
+      "label": "TikTok",
+      "url": "https://www.tiktok.com/@maewnoi"
+    }
   ]
 }
