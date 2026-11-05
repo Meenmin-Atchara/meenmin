@@ -1,25 +1,30 @@
 {
   "items": [
     {
-      "title": "Assistant Business Analyst / เจ้าหน้าที่ MIS ฝ่ายขายต่างประเทศ",
+      "title": "Assistant Business Analyst | 2025",
       "company": "บริษัท ขอนแก่นแหอวน จำกัด สาขาบวร l ขอนแก่น",
       "period": "ปัจจุบัน",
       "current": true
     },
     {
-      "title": "โปรแกรมเมอร์ (Programmer)",
+      "current": false,
+      "title": "เจ้าหน้าที่ MIS ฝ่ายขายต่างประเทศ | 2022-2025",
+      "company": "บริษัท ขอนแก่นแหอวน จำกัด สาขาบวร l ขอนแก่น"
+    },
+    {
+      "title": "โปรแกรมเมอร์ (Programmer) | 2021-2022",
       "company": "บริษัท โรงงานทออวนเดชาพานิช จำกัด l ขอนแก่น",
       "period": "",
       "current": false
     },
     {
-      "title": "กราฟฟิก (Graphic Design)",
-      "company": "บางกอก เอ การ์ด l ขอนแก่น",
+      "title": "กราฟฟิก (Graphic Design)  | 1/3/2021 - 31/5/2021",
+      "company": "บางกอก เอ การ์ด l ขอนแก่น ",
       "period": "",
       "current": false
     },
     {
-      "title": "IT Support (นักศึกษาฝึกงาน)",
+      "title": "IT Support (นักศึกษาฝึกงาน)  | 1/6/2018 - 31/10/2018",
       "company": "บริษัท โฆษะโฮลดิ้ง จำกัด l ขอนแก่น",
       "period": "",
       "current": false
