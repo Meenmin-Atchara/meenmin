@@ -5,9 +5,11 @@
   "sideLabel": "Hobby Showcase",
   "items": [
     {
-      "title": "ขับรถ & ท่องเที่ยว 🚗",
-      "desc": "ความสุขหลังพวงมาลัยและการออกเดินทางไปสัมผัสบรรยากาศธรรมชาติใหม่ๆ",
-      "images": []
+      "title": "Hit the road. 🚗",
+      "desc": "Finding happiness on the open road and embracing new scenic views.",
+      "images": [
+        "assets/uploads/s__91414534_0.jpg"
+      ]
     },
     {
       "title": "เล่นดนตรี 🎸",
