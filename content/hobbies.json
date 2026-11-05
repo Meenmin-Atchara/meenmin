@@ -15,14 +15,18 @@
       ]
     },
     {
-      "title": "Music 🎸",
+      "title": "Music. 🎸",
       "desc": "Playing instruments and expressing feelings through music.",
       "images": []
     },
     {
-      "title": "Exercise 🏋️‍♀️",
+      "title": "Exercise. 🏋️‍♀️",
       "desc": "Weight training and running.",
       "images": []
+    },
+    {
+      "title": "Gaming & Coding.",
+      "desc": "Gaming & Coding."
     }
   ]
 }
