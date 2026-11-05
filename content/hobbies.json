@@ -5,7 +5,7 @@
   "sideLabel": "Hobby Showcase",
   "items": [
     {
-      "title": "Hit the road. 🚗",
+      "title": "Hit the Road 🚗",
       "desc": "Finding happiness on the open road and embracing new scenic views.",
       "images": [
         "assets/uploads/s__91414534_0.jpg",
@@ -15,18 +15,18 @@
       ]
     },
     {
-      "title": "Music. 🎸",
+      "title": "Music 🎸",
       "desc": "Playing instruments and expressing feelings through music.",
       "images": []
     },
     {
-      "title": "Exercise. 🏋️‍♀️",
+      "title": "Workouts 🏋️‍♀️",
       "desc": "Weight training and running.",
       "images": []
     },
     {
-      "title": "Gaming & Coding.",
-      "desc": "Gaming & Coding."
+      "title": "Gaming & Coding",
+      "desc": "Exploring virtual worlds and building creative side projects."
     }
   ]
 }
