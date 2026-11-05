@@ -15,18 +15,13 @@
       ]
     },
     {
-      "title": "เล่นดนตรี 🎸",
-      "desc": "ผ่อนคลายไปกับเสียงกีต้าร์และท่วงทำนองในยามว่าง",
+      "title": "Music 🎸",
+      "desc": "Playing instruments and expressing feelings through music.",
       "images": []
     },
     {
-      "title": "ร้องเพลง 🎤",
-      "desc": "ปลดปล่อยอารมณ์และความสนุกผ่านเสียงเพลง",
-      "images": []
-    },
-    {
-      "title": "กิจกรรมอื่นๆ 🌲",
-      "desc": "ออกกำลังกายเข้ายิม วิ่ง และสัมผัสป่าเขาธรรมชาติ",
+      "title": "Exercise 🏋️‍♀️",
+      "desc": "Weight training and running.",
       "images": []
     }
   ]
