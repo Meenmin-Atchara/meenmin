@@ -1,342 +1,203 @@
 <!DOCTYPE html>
-<html lang="th" class="scroll-smooth">
+<html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meen Atchara - Portfolio</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Prompt', sans-serif; }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .hobby-content {
-            animation: fadeIn 0.5s ease-in-out forwards;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEEN ATCHARA - Portfolio</title>
+  <style>
+    :root {
+      --bg-color: #0d0d0d;
+      --card-bg: #161618;
+      --card-border: #26262a;
+      --card-hover-border: #e50914;
+      --text-main: #ffffff;
+      --text-muted: #a1a1aa;
+      --accent-color: #e50914;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Sukhumvit Tadmai', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Layout Container ปรับความกว้างให้ยืดหยุ่นตามความกว้างหน้าจอ */
+    .container {
+      width: 100%;
+      max-width: 1280px; /* ขยายกว้างขึ้น รองรับหน้าจอใหญ่ */
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: var(--accent-color);
+      border-radius: 50%;
+    }
+
+    /* Grid System ที่ปรับตาม Responsive Auto-fit */
+    .grid-container {
+      display: grid;
+      /* ปรับ minmax ให้กล่องขยายเต็มที่ ไม่เบียดเกินไป */
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    /* Card Layout สำหรับส่วนการศึกษา / ทักษะ / ประสบการณ์ */
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .card:hover {
+      border-color: var(--card-hover-border);
+      transform: translateY(-2px);
+    }
+
+    .card-badge {
+      color: var(--accent-color);
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 12px;
+      word-break: break-word; /* ป้องกันข้อความยาวเกินล้นกล่อง */
+    }
+
+    .card-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Timeline Style สำหรับประสบการณ์ทำงาน */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 28px;
+      border-left: 2px solid var(--card-border);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--accent-color);
+    }
+
+    /* Breakpoint สำหรับหน้าจอขนาดเล็ก */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 16px;
+      }
+
+      .grid-container {
+        grid-template-columns: 1fr; /* ให้แสดงผล 1 คอลัมน์เต็มบนมือถือ */
+      }
+
+      .card {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
-<body class="bg-neutral-950 text-neutral-100 antialiased selection:bg-red-600 selection:text-white">
+<body>
 
-    <!--
-        ============================================================
-        หน้านี้คือ "template" (หน้ากาก) เท่านั้น
-        ข้อความ รูป และลิงก์ทั้งหมดอยู่ในโฟลเดอร์ content/*.json
-        แก้เนื้อหาได้ที่หลังบ้าน  /admin/  โดยไม่ต้องแตะไฟล์นี้
-        ============================================================
-    -->
-
-    <!-- Navigation Bar -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800">
-        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#home" class="font-bold text-lg tracking-wider text-white"> <span class="text-red-600">#</span> <span id="brand-name"></span> </a>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium text-neutral-400">
-                <a href="#home" class="hover:text-red-500 transition">Home</a>
-                <a href="#hobbies" class="hover:text-red-500 transition">Hobbies</a>
-                <a href="#experience" class="hover:text-red-500 transition">Experience</a>
-                <a href="#education" class="hover:text-red-500 transition">Education</a>
-                <a href="#skills" class="hover:text-red-500 transition">Skills</a>
-                <a href="#projects" class="hover:text-red-500 transition">Projects</a>
-                <a href="#contact" class="hover:text-red-500 transition">Contact</a>
-            </nav>
+  <main class="container">
+    <!-- Section: ประสบการณ์การทำงาน -->
+    <section class="section">
+      <h2 class="section-title">ประสบการณ์การทำงาน</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="card-badge">ปัจจุบัน</div>
+          <h3 class="card-title">Assistant Business Analyst / เจ้าหน้าที่ MIS ฝ่ายขายต่างประเทศ</h3>
+          <p class="card-subtitle">บริษัท ขอนแก่นแหอวน จำกัด สาขาบวร | ขอนแก่น</p>
         </div>
-    </header>
-
-    <!-- 1. Home Section -->
-    <section id="home" class="pt-32 pb-16 px-6 max-w-5xl mx-auto min-h-[85vh] flex flex-col justify-center">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
-            <div class="md:col-span-2 space-y-6">
-                <span id="home-badge" class="inline-block px-3 py-1 bg-red-950/60 border border-red-800/50 text-red-400 text-xs font-semibold rounded-full uppercase tracking-wider"></span>
-                <h1 id="home-name" class="text-4xl md:text-5xl font-bold tracking-tight text-white"></h1>
-                <p id="home-intro" class="text-neutral-400 text-lg leading-relaxed whitespace-pre-line"></p>
-
-                <div class="pt-2">
-                    <div class="p-4 rounded-xl bg-neutral-900 border border-neutral-800">
-                        <h3 id="home-strengths-title" class="text-sm font-semibold text-red-500 uppercase tracking-wide mb-1"></h3>
-                        <p id="home-strengths-text" class="text-sm text-neutral-300 whitespace-pre-line"></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex justify-center">
-                <div class="w-48 h-48 md:w-64 md:h-64 rounded-2xl bg-gradient-to-br from-red-600 to-neutral-900 p-1 shadow-2xl shadow-red-950/40">
-                    <div class="w-full h-full bg-neutral-900 rounded-2xl flex items-center justify-center text-neutral-500 text-sm overflow-hidden">
-                        <img id="home-image" src="" alt="Profile" class="w-full h-full object-cover rounded-2xl hidden">
-                    </div>
-                </div>
-            </div>
+        <div class="timeline-item">
+          <h3 class="card-title">โปรแกรมเมอร์ (Programmer)</h3>
+          <p class="card-subtitle">บริษัท โรงงานทออวนเดชพาณิช จำกัด | ขอนแก่น</p>
         </div>
+      </div>
     </section>
 
-    <!-- 2. Hobbies Section -->
-    <section id="hobbies" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
-            <div>
-                <span id="hobbies-eyebrow" class="text-xs text-red-500 font-semibold uppercase tracking-widest block mb-2"></span>
-                <h2 class="text-4xl md:text-6xl font-black tracking-tight text-white leading-none">
-                    <span id="hobbies-title1"></span> <br><span id="hobbies-title2" class="text-red-600"></span>
-                </h2>
-            </div>
-            <div class="flex items-center gap-6 self-end md:self-auto">
-                <span id="slide-counter" class="text-sm text-neutral-400 font-mono tracking-wider">01 / 01</span>
-                <div class="flex gap-2">
-                    <button onclick="changeHobby(-1)" aria-label="Previous" class="w-12 h-12 rounded-full border border-neutral-800 hover:border-red-600 hover:text-red-500 flex items-center justify-center text-white transition cursor-pointer text-lg">&#10094;</button>
-                    <button onclick="changeHobby(1)" aria-label="Next" class="w-12 h-12 rounded-full border border-neutral-800 hover:border-red-600 hover:text-red-500 flex items-center justify-center text-white transition cursor-pointer text-lg">&#10095;</button>
-                </div>
-            </div>
+    <!-- Section: การศึกษา (ปรับปรุง layout จากภาพที่เบียดกัน) -->
+    <section class="section">
+      <h2 class="section-title">การศึกษา</h2>
+      <div class="grid-container">
+        
+        <div class="card">
+          <div>
+            <div class="card-badge">ปริญญาตรี</div>
+            <h3 class="card-title">วศ.บ. คอมพิวเตอร์ | 2015 - 2020</h3>
+          </div>
+          <p class="card-subtitle">มหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน วิทยาเขตขอนแก่น</p>
         </div>
 
-        <div id="hobby-display-container" class="hobby-content"></div>
+        <div class="card">
+          <div>
+            <div class="card-badge">มัธยมศึกษาตอนปลาย</div>
+            <h3 class="card-title">สายวิทย์ - คณิต | 2012 - 2015</h3>
+          </div>
+          <p class="card-subtitle">โรงเรียนกัลยาณวัตร จ.ขอนแก่น</p>
+        </div>
 
-        <div id="hobby-bars" class="flex gap-3 mt-10"></div>
+        <div class="card">
+          <div>
+            <div class="card-badge">มัธยมศึกษาตอนต้น</div>
+            <h3 class="card-title">สามัญ | 2009 - 2012</h3>
+          </div>
+          <p class="card-subtitle">โรงเรียนกัลยาณวัตร จ.ขอนแก่น</p>
+        </div>
+
+      </div>
     </section>
+  </main>
 
-    <!-- 3. Experience Section -->
-    <section id="experience" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
-        <h2 class="text-2xl font-bold text-white mb-10 flex items-center gap-3">
-            <span class="w-3 h-3 bg-red-600 rounded-full"></span> <span id="experience-title"></span>
-        </h2>
-        <div id="experience-list" class="space-y-6 border-l-2 border-neutral-800 pl-6 ml-2"></div>
-    </section>
-
-    <!-- 4. Education Section -->
-    <section id="education" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
-        <h2 class="text-2xl font-bold text-white mb-10 flex items-center gap-3">
-            <span class="w-3 h-3 bg-red-600 rounded-full"></span> <span id="education-title"></span>
-        </h2>
-        <div id="education-list" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
-    </section>
-
-    <!-- 5. Skills Section -->
-    <section id="skills" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
-        <h2 class="text-2xl font-bold text-white mb-10 flex items-center gap-3">
-            <span class="w-3 h-3 bg-red-600 rounded-full"></span> <span id="skills-title"></span>
-        </h2>
-        <div id="skills-list" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
-    </section>
-
-    <!-- 6. Projects Section -->
-    <section id="projects" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
-        <h2 class="text-2xl font-bold text-white mb-10 flex items-center gap-3">
-            <span class="w-3 h-3 bg-red-600 rounded-full"></span> <span id="projects-title"></span>
-        </h2>
-        <div id="projects-list" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
-    </section>
-
-    <!-- 7. Contact Section -->
-    <section id="contact" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
-        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-            <span class="w-3 h-3 bg-red-600 rounded-full"></span> <span id="contact-title"></span>
-        </h2>
-        <p id="contact-intro" class="text-neutral-400 mb-8 whitespace-pre-line"></p>
-        <div id="contact-list" class="flex flex-wrap gap-4"></div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="site-footer" class="py-8 text-center text-xs text-neutral-600 border-t border-neutral-900"></footer>
-
-    <!-- JavaScript: โหลดเนื้อหาจาก content/*.json แล้วนำมาแสดงตาม template ด้านบน -->
-    <script>
-        // ---------- ตัวช่วย ----------
-        // escape ข้อความก่อนใส่ลง HTML เพื่อความปลอดภัย
-        const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => (
-            { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
-        ));
-        // กันลิงก์อันตราย เช่น javascript:
-        const safeUrl = (u) => {
-            u = String(u ?? '').trim();
-            return /^(javascript|data|vbscript):/i.test(u) ? '' : u;
-        };
-        const $ = (id) => document.getElementById(id);
-        const setText = (id, text) => { $(id).textContent = text ?? ''; };
-
-        const loadJson = (name) =>
-            fetch(`content/${name}.json`, { cache: 'no-cache' }).then((res) => {
-                if (!res.ok) throw new Error(`โหลด content/${name}.json ไม่ได้ (${res.status})`);
-                return res.json();
-            });
-
-        // ---------- แต่ละส่วนของหน้า ----------
-        function renderSettings(s) {
-            document.title = s.pageTitle || document.title;
-            setText('brand-name', s.brandName);
-            setText('site-footer', s.footer);
-            const h = s.headings || {};
-            setText('experience-title', h.experience);
-            setText('education-title', h.education);
-            setText('skills-title', h.skills);
-            setText('projects-title', h.projects);
-            setText('contact-title', h.contact);
-        }
-
-        function renderHome(h) {
-            setText('home-badge', h.badge);
-            setText('home-name', h.name);
-            setText('home-intro', h.intro);
-            setText('home-strengths-title', h.strengthsTitle);
-            setText('home-strengths-text', h.strengthsText);
-            const img = $('home-image');
-            const src = safeUrl(h.profileImage);
-            if (src) {
-                img.src = src;
-                img.classList.remove('hidden');
-            }
-        }
-
-        function renderExperience(data) {
-            $('experience-list').innerHTML = (data.items || []).map((it) => `
-                <div class="relative">
-                    <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full ${it.current ? 'bg-red-600' : 'bg-neutral-700'} border-4 border-neutral-950"></div>
-                    ${it.period ? `<span class="text-xs text-red-500 font-semibold">${esc(it.period)}</span>` : ''}
-                    <h3 class="text-lg font-semibold text-white mt-1">${esc(it.title)}</h3>
-                    <p class="text-sm text-neutral-400">${esc(it.company)}</p>
-                </div>
-            `).join('');
-        }
-
-        function renderEducation(data) {
-            $('education-list').innerHTML = (data.items || []).map((it) => `
-                <div class="p-6 rounded-xl bg-neutral-900/60 border border-neutral-800">
-                    <span class="text-xs text-red-500 font-semibold">${esc(it.level)}</span>
-                    <h3 class="text-lg font-bold text-white mt-1">${esc(it.title)}</h3>
-                    <p class="text-sm text-neutral-400 mt-2">${esc(it.school)}</p>
-                </div>
-            `).join('');
-        }
-
-        function renderSkills(data) {
-            $('skills-list').innerHTML = (data.items || []).map((it) => `
-                <div class="p-5 rounded-xl bg-neutral-900 border border-neutral-800">
-                    <h3 class="font-semibold text-white mb-2">${esc(it.title)}</h3>
-                    <p class="text-sm text-neutral-400">${esc(it.desc)}</p>
-                </div>
-            `).join('');
-        }
-
-        function renderProjects(data) {
-            const linkLabel = data.linkLabel || 'ดูรายละเอียด →';
-            $('projects-list').innerHTML = (data.items || []).map((it) => {
-                const img = safeUrl(it.image);
-                const link = safeUrl(it.link);
-                return `
-                <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between hover:border-red-600/50 transition">
-                    <div>
-                        <div class="h-40 bg-neutral-950 rounded-lg mb-4 flex items-center justify-center text-neutral-600 text-sm overflow-hidden">
-                            ${img
-                                ? `<img src="${esc(img)}" alt="${esc(it.title)}" class="w-full h-full object-cover">`
-                                : '[ รูปภาพพรีวิวผลงาน ]'}
-                        </div>
-                        <span class="text-xs text-red-500 font-semibold uppercase">${esc(it.category)}</span>
-                        <h3 class="text-xl font-semibold text-white mt-1">${esc(it.title)}</h3>
-                        <p class="text-neutral-400 text-sm mt-2 whitespace-pre-line">${esc(it.desc)}</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-neutral-800 flex justify-between items-center">
-                        <span class="text-xs bg-neutral-800 text-neutral-300 px-2.5 py-1 rounded">${esc(it.tag)}</span>
-                        ${link
-                            ? `<a href="${esc(link)}" target="_blank" rel="noopener" class="text-sm font-medium text-red-500 hover:text-red-400">${esc(linkLabel)}</a>`
-                            : ''}
-                    </div>
-                </div>`;
-            }).join('');
-        }
-
-        function renderContact(c) {
-            setText('contact-intro', c.intro);
-            const btn = 'px-5 py-2.5 bg-neutral-900 border border-neutral-800 hover:border-red-600 rounded-lg text-sm font-medium transition text-white';
-            let html = '';
-            if (c.email) {
-                html += `<a href="mailto:${esc(c.email)}" class="${btn} flex items-center gap-2"><span>📧</span> ${esc(c.email)}</a>`;
-            }
-            html += (c.links || []).map((l) => {
-                const url = safeUrl(l.url);
-                return url ? `<a href="${esc(url)}" target="_blank" rel="noopener" class="${btn}">${esc(l.label)}</a>` : '';
-            }).join('');
-            $('contact-list').innerHTML = html;
-        }
-
-        // ---------- Hobbies slider ----------
-        let hobbyCategories = [];
-        let currentCategoryIndex = 0;
-
-        function renderHobbySection() {
-            if (!hobbyCategories.length) return;
-            const container = $('hobby-display-container');
-            const cur = hobbyCategories[currentCategoryIndex];
-            const pad = (n) => String(n).padStart(2, '0');
-
-            $('slide-counter').textContent = `${pad(currentCategoryIndex + 1)} / ${pad(hobbyCategories.length)}`;
-
-            hobbyCategories.forEach((_, i) => {
-                $(`bar-${i}`).className =
-                    `h-1 flex-1 ${i === currentCategoryIndex ? 'bg-red-600' : 'bg-neutral-800'} rounded-full transition-all duration-300`;
-            });
-
-            // แสดงรูปสูงสุด 4 ช่อง ช่องไหนไม่มีรูปจะขึ้นกรอบเปล่า
-            const slots = [0, 1, 2, 3].map((i) => {
-                const src = safeUrl((cur.images || [])[i]);
-                return `
-                    <div class="aspect-[4/3] bg-neutral-900 border border-neutral-800 rounded-2xl flex items-center justify-center text-neutral-600 text-sm overflow-hidden shadow-inner">
-                        ${src
-                            ? `<img src="${esc(src)}" alt="${esc(cur.title)}" class="w-full h-full object-cover">`
-                            : `<span class="text-center p-2">[ รูป ${i + 1} ]</span>`}
-                    </div>`;
-            }).join('');
-
-            container.innerHTML = `
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    <div class="lg:col-span-8 grid grid-cols-2 gap-4">${slots}</div>
-                    <div class="lg:col-span-4 space-y-4 lg:pl-6 border-l border-neutral-800/60">
-                        <span class="text-xs text-red-500 font-semibold uppercase tracking-wider">${esc(window.hobbySideLabel)}</span>
-                        <h3 class="text-2xl font-bold text-white">${esc(cur.title)}</h3>
-                        <p class="text-neutral-400 text-sm leading-relaxed whitespace-pre-line">${esc(cur.desc)}</p>
-                    </div>
-                </div>
-            `;
-            // เล่นแอนิเมชันเฟดใหม่ทุกครั้งที่สลับหัวข้อ
-            container.classList.remove('hobby-content');
-            void container.offsetWidth;
-            container.classList.add('hobby-content');
-        }
-
-        function changeHobby(direction) {
-            if (!hobbyCategories.length) return;
-            currentCategoryIndex =
-                (currentCategoryIndex + direction + hobbyCategories.length) % hobbyCategories.length;
-            renderHobbySection();
-        }
-
-        function renderHobbies(data) {
-            setText('hobbies-eyebrow', data.eyebrow);
-            setText('hobbies-title1', data.titleLine1);
-            setText('hobbies-title2', data.titleLine2);
-            window.hobbySideLabel = data.sideLabel || '';
-            hobbyCategories = data.items || [];
-            currentCategoryIndex = 0;
-            $('hobby-bars').innerHTML = hobbyCategories.map((_, i) => `<div id="bar-${i}"></div>`).join('');
-            renderHobbySection();
-        }
-
-        // ---------- เริ่มทำงาน ----------
-        Promise.all([
-            loadJson('settings'), loadJson('home'), loadJson('hobbies'), loadJson('experience'),
-            loadJson('education'), loadJson('skills'), loadJson('projects'), loadJson('contact')
-        ]).then(([settings, home, hobbies, experience, education, skills, projects, contact]) => {
-            renderSettings(settings);
-            renderHome(home);
-            renderHobbies(hobbies);
-            renderExperience(experience);
-            renderEducation(education);
-            renderSkills(skills);
-            renderProjects(projects);
-            renderContact(contact);
-        }).catch((err) => {
-            console.error(err);
-            document.body.insertAdjacentHTML('afterbegin',
-                '<div class="p-6 text-center text-red-400 text-sm">โหลดเนื้อหาไม่สำเร็จ: ' + esc(err.message) +
-                '<br>(ถ้าเปิดไฟล์ตรง ๆ จากเครื่อง ให้รันผ่านเซิร์ฟเวอร์ เช่น npx serve)</div>');
-        });
-    </script>
 </body>
 </html>
