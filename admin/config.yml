@@ -1,0 +1,150 @@
+# ตั้งค่าหลังบ้าน Decap CMS
+# ไฟล์นี้บอกว่า "ฟอร์มแก้ไข" แต่ละหน้ามีช่องอะไรบ้าง และเนื้อหาเก็บในไฟล์ไหน
+
+backend:
+  name: github
+  repo: Meenmin-Atchara/meenmin
+  branch: main
+  # TODO (ขั้นตอนตั้ง login จริง): ถ้าใช้ GitHub Pages ต้องมี OAuth proxy
+  # แล้วเพิ่มบรรทัด  base_url: https://<ที่อยู่ OAuth proxy ของคุณ>
+  # ตอนทดสอบบนเครื่อง (localhost) ไม่ต้องตั้งค่านี้
+
+# ใช้ตอนรันทดสอบบนเครื่อง: เปิดเทอร์มินัลรัน  npx decap-server  แล้วเข้า http://localhost:xxxx/admin/
+# (มีผลเฉพาะ localhost ไม่กระทบเว็บจริง)
+local_backend: true
+
+# โฟลเดอร์เก็บรูปที่อัปโหลดผ่านหลังบ้าน
+media_folder: "assets/uploads"
+public_folder: "assets/uploads"
+
+collections:
+  - name: site
+    label: "เนื้อหาเว็บไซต์"
+    files:
+      # ------------------------------------------------------------
+      - name: settings
+        label: "ตั้งค่าทั่วไป"
+        file: content/settings.json
+        fields:
+          - { label: "ชื่อแท็บเบราว์เซอร์ (Page title)", name: pageTitle, widget: string }
+          - { label: "ชื่อบนแถบเมนู", name: brandName, widget: string }
+          - { label: "ข้อความท้ายเว็บ (Footer)", name: footer, widget: string }
+          - label: "หัวข้อของแต่ละส่วน"
+            name: headings
+            widget: object
+            fields:
+              - { label: "ประสบการณ์การทำงาน", name: experience, widget: string }
+              - { label: "การศึกษา", name: education, widget: string }
+              - { label: "ทักษะและความถนัด", name: skills, widget: string }
+              - { label: "ผลงาน", name: projects, widget: string }
+              - { label: "ช่องทางการติดต่อ", name: contact, widget: string }
+
+      # ------------------------------------------------------------
+      - name: home
+        label: "หน้าแรก (Home)"
+        file: content/home.json
+        fields:
+          - { label: "ป้ายตำแหน่ง (ตัวเล็กด้านบนชื่อ)", name: badge, widget: string }
+          - { label: "ชื่อใหญ่", name: name, widget: string }
+          - { label: "ข้อความแนะนำตัว", name: intro, widget: text }
+          - { label: "หัวข้อกล่องจุดแข็ง", name: strengthsTitle, widget: string }
+          - { label: "ข้อความจุดแข็ง", name: strengthsText, widget: text }
+          - { label: "รูปโปรไฟล์", name: profileImage, widget: image, required: false }
+
+      # ------------------------------------------------------------
+      - name: hobbies
+        label: "งานอดิเรก (Hobbies)"
+        file: content/hobbies.json
+        fields:
+          - { label: "ข้อความเล็กเหนือหัวข้อ", name: eyebrow, widget: string }
+          - { label: "หัวข้อใหญ่ บรรทัดที่ 1", name: titleLine1, widget: string }
+          - { label: "หัวข้อใหญ่ บรรทัดที่ 2 (สีแดง)", name: titleLine2, widget: string }
+          - { label: "ป้ายเล็กด้านข้างคำอธิบาย", name: sideLabel, widget: string }
+          - label: "รายการงานอดิเรก (แต่ละอันคือ 1 สไลด์)"
+            name: items
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "ชื่อ (ใส่อิโมจิต่อท้ายได้)", name: title, widget: string }
+              - { label: "คำอธิบาย", name: desc, widget: text }
+              - label: "รูปภาพ (สูงสุด 4 รูป)"
+                name: images
+                widget: list
+                max: 4
+                required: false
+                field: { label: "รูป", name: image, widget: image }
+
+      # ------------------------------------------------------------
+      - name: experience
+        label: "ประสบการณ์การทำงาน"
+        file: content/experience.json
+        fields:
+          - label: "รายการ (เรียงจากบนลงล่าง)"
+            name: items
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "ตำแหน่ง", name: title, widget: string }
+              - { label: "บริษัท / สถานที่", name: company, widget: string }
+              - { label: "ป้ายกำกับสีแดง (เช่น ปัจจุบัน)", name: period, widget: string, required: false }
+              - { label: "จุดสีแดงบนเส้นเวลา", name: current, widget: boolean, default: false, required: false }
+
+      # ------------------------------------------------------------
+      - name: education
+        label: "การศึกษา"
+        file: content/education.json
+        fields:
+          - label: "รายการ"
+            name: items
+            widget: list
+            summary: "{{fields.level}} - {{fields.title}}"
+            fields:
+              - { label: "ระดับการศึกษา", name: level, widget: string }
+              - { label: "สาขา / หลักสูตร", name: title, widget: string }
+              - { label: "สถาบัน", name: school, widget: string }
+
+      # ------------------------------------------------------------
+      - name: skills
+        label: "ทักษะและความถนัด"
+        file: content/skills.json
+        fields:
+          - label: "รายการ"
+            name: items
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "ชื่อทักษะ", name: title, widget: string }
+              - { label: "คำอธิบาย", name: desc, widget: text }
+
+      # ------------------------------------------------------------
+      - name: projects
+        label: "ผลงาน (Projects)"
+        file: content/projects.json
+        fields:
+          - { label: "ข้อความปุ่มลิงก์", name: linkLabel, widget: string }
+          - label: "รายการผลงาน"
+            name: items
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "หมวด (ตัวเล็กสีแดง)", name: category, widget: string }
+              - { label: "ชื่อผลงาน", name: title, widget: string }
+              - { label: "คำอธิบาย", name: desc, widget: text }
+              - { label: "ป้าย (มุมซ้ายล่าง)", name: tag, widget: string }
+              - { label: "รูปพรีวิว", name: image, widget: image, required: false }
+              - { label: "ลิงก์ดูรายละเอียด (เว้นว่าง = ไม่แสดงปุ่ม)", name: link, widget: string, required: false }
+
+      # ------------------------------------------------------------
+      - name: contact
+        label: "ช่องทางการติดต่อ"
+        file: content/contact.json
+        fields:
+          - { label: "ข้อความนำ", name: intro, widget: text }
+          - { label: "อีเมล", name: email, widget: string, required: false }
+          - label: "ลิงก์โซเชียล"
+            name: links
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { label: "ชื่อปุ่ม", name: label, widget: string }
+              - { label: "URL", name: url, widget: string }

@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "title": "Assistant Business Analyst / เจ้าหน้าที่ MIS ฝ่ายขายต่างประเทศ",
+      "company": "บริษัท ขอนแก่นแหอวน จำกัด สาขาบวร l ขอนแก่น",
+      "period": "ปัจจุบัน",
+      "current": true
+    },
+    {
+      "title": "โปรแกรมเมอร์ (Programmer)",
+      "company": "บริษัท โรงงานทออวนเดชาพานิช จำกัด l ขอนแก่น",
+      "period": "",
+      "current": false
+    },
+    {
+      "title": "กราฟฟิก (Graphic Design)",
+      "company": "บางกอก เอ การ์ด l ขอนแก่น",
+      "period": "",
+      "current": false
+    },
+    {
+      "title": "IT Support (นักศึกษาฝึกงาน)",
+      "company": "บริษัท โฆษะโฮลดิ้ง จำกัด l ขอนแก่น",
+      "period": "",
+      "current": false
+    }
+  ]
+}

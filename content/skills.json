@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "title": "System Analysis & Design",
+      "desc": "การวิเคราะห์ ออกแบบ และพัฒนาระบบตามความต้องการ User"
+    },
+    {
+      "title": "Testing & Quality Assurance",
+      "desc": "ทดสอบระบบตาม Test case รวมถึงการออกแบบเคสที่ใช้ทดสอบ (Manual Testing)"
+    },
+    {
+      "title": "IT Support & Troubleshooting",
+      "desc": "ตรวจสอบแก้ไขปัญหาระบบให้ User รวมถึงอุปกรณ์ IT ต่างๆ"
+    },
+    {
+      "title": "Database & Reporting",
+      "desc": "การจัดการข้อมูลในฐานข้อมูล เช่น ดึงข้อมูล จัดทำรายงาน วิเคราะห์ปัญหา"
+    }
+  ]
+}
