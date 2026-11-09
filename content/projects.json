@@ -7,7 +7,8 @@
       "desc": "ระบบดึงข้อมูลและจัดการฐานข้อมูลเพื่อจัดทำรายงานและวิเคราะห์ปัญหาทางธุรกิจ",
       "tag": "Database / MIS",
       "image": "",
-      "link": ""
+      "link": "",
+      "linkLabel": ""
     },
     {
       "category": "Testing & Support",
@@ -15,7 +16,8 @@
       "desc": "การเขียนเคสทดสอบ ตรวจสอบระบบ และแก้ปัญหาการใช้งานให้ผู้ใช้ได้อย่างมีประสิทธิภาพ",
       "tag": "Manual Testing",
       "image": "",
-      "link": ""
+      "link": "https://drive.google.com/drive/u/0/folders/1qlL7Myvd857ASeA3taEJTVLs4-dzXIK9",
+      "linkLabel": ""
     }
   ]
 }
