@@ -1,12 +1,93 @@
 {
   "items": [
     {
+      "title": "Data + AI for Communication: PDPA การคุ้มครองข้อมูลส่วนบุคคล เตรียมความพร้อมเพื่อโอกาสทางธุรกิจ",
+      "issuer": "Thai MOOC",
+      "date": "6 พฤศจิกายน 2026",
+      "desc": "",
+      "image": "",
+      "link": "",
+      "linkLabel": ""
+    },
+    {
+      "title": "อบรม หลักสูตร AI for Business Integration",
+      "issuer": "",
+      "date": "16/7/2026",
+      "desc": "อบรม หลักสูตร AI for Business Integration  ด้วย Claude\n\n ใช้ AI เป็นผู้ช่วยคิด วางแผน ติดตามงาน และนำเสนอธุรกิจ\nวัตถุประสงค์ : เพื่อให้ผู้อบรมได้รับความรู้และเพิ่มประสิทธิภาพในการทำงานด้วย AI",
+      "image": "",
+      "link": "",
+      "linkLabel": ""
+    },
+    {
+      "title": "อบรมหลักสูตร Power BI",
+      "issuer": "",
+      "date": "เมษายน 2024",
+      "desc": "ภาพรวม power BI ,การสร้างรายงาน, การ Import ข้อมูล และการจัดการข้อมูล",
+      "image": "",
+      "link": "",
+      "linkLabel": ""
+    },
+    {
+      "title": "อบรมขั้นตอนการผลิต 009-016 สาขา CY",
+      "issuer": "",
+      "date": "มกราคม 2024",
+      "desc": "เนื้อหา :\n- ความรู้พื้นฐานเกี่ยวกับตัวอวน\n- การหาขนาดเส้นใย ขนาดตา จำนวนตา ความยาว\n- ขั้นตอนการผลิต\n- ต้นทุนสินค้า เป็นต้น",
+      "image": "",
+      "link": "",
+      "linkLabel": ""
+    },
+    {
+      "title": "อบรม Business transformation by google workspace",
+      "issuer": "",
+      "date": "กรกฏาคม 2023",
+      "desc": "เนื้อหา :\n- ความรู้พื้นฐานในการทํา Digital Transformation for Business ขององค์กร\nภายใต้การทํางานแบบ Google Workspace Collaboration Model\n- แนวทางการทํา Digital Transformation for Business ในอุตสาหกรรมต่าง ๆ\n- แนวทางในการวิเคราะห์กระบวนการทํางานเดิม เพื่อพัฒนาและต่อยอด ด้วยเทคนิคในการเลือกใช้",
+      "image": "",
+      "link": "",
+      "linkLabel": ""
+    },
+    {
+      "title": "Essential SQL for Everyone",
+      "issuer": "borntoDev",
+      "date": "11/7/2022",
+      "desc": "",
+      "image": "",
+      "link": "",
+      "linkLabel": ""
+    },
+    {
+      "title": "การถ่ายภาพเบื้องต้น",
+      "issuer": "Thai MOOC",
+      "date": "28 ธันวาคม  2020",
+      "desc": "",
+      "image": "",
+      "link": "",
+      "linkLabel": ""
+    },
+    {
+      "title": "การผลิตสื่อกราฟิกอย่างมืออาชีพ",
+      "issuer": "",
+      "date": "27 ธันวาคม 2020",
+      "desc": "",
+      "image": "",
+      "link": "",
+      "linkLabel": ""
+    },
+    {
       "title": "การออกแบบและพัฒนาเว็บไซต์เต์พื่อรองรับการแสดงผลบนอุปกรณ์เคลื่อนที่",
       "issuer": "Thai MOOC",
       "date": "27 มกราคม 2022",
       "desc": "",
       "image": "",
       "link": "https://drive.google.com/drive/u/0/folders/17nMA3jVT1TVa6ZpkwVUH5t5XA6FQUhlc",
+      "linkLabel": ""
+    },
+    {
+      "title": "แข่งขันหุ่นยนต์ TGKK",
+      "issuer": "มหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน วิทยาเขตขอนแก่น",
+      "date": "มีนาคม 2018",
+      "desc": "",
+      "image": "",
+      "link": "",
       "linkLabel": ""
     }
   ]
