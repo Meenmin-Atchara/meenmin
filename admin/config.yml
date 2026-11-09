@@ -1,17 +1,12 @@
-# ตั้งค่าหลังบ้าน Decap CMS
+# ตั้งค่าหลังบ้าน (Sveltia CMS / Decap CMS ใช้ไฟล์นี้ร่วมกันได้)
 # ไฟล์นี้บอกว่า "ฟอร์มแก้ไข" แต่ละหน้ามีช่องอะไรบ้าง และเนื้อหาเก็บในไฟล์ไหน
 
 backend:
   name: github
   repo: Meenmin-Atchara/meenmin
   branch: main
-  # TODO (ขั้นตอนตั้ง login จริง): ถ้าใช้ GitHub Pages ต้องมี OAuth proxy
-  # แล้วเพิ่มบรรทัด  base_url: https://<ที่อยู่ OAuth proxy ของคุณ>
-  # ตอนทดสอบบนเครื่อง (localhost) ไม่ต้องตั้งค่านี้
 
-# ใช้ตอนรันทดสอบบนเครื่อง: เปิดเทอร์มินัลรัน  npx decap-server  แล้วเข้า http://localhost:xxxx/admin/
-# (มีผลเฉพาะ localhost ไม่กระทบเว็บจริง)
-local_backend: true
+site_url: https://meenmin-atchara.netlify.app
 
 # โฟลเดอร์เก็บรูปที่อัปโหลดผ่านหลังบ้าน
 media_folder: "assets/uploads"
@@ -20,6 +15,8 @@ public_folder: "assets/uploads"
 collections:
   - name: site
     label: "เนื้อหาเว็บไซต์"
+    editor:
+      preview: false
     files:
       # ------------------------------------------------------------
       - name: settings
@@ -28,16 +25,21 @@ collections:
         fields:
           - { label: "ชื่อแท็บเบราว์เซอร์ (Page title)", name: pageTitle, widget: string }
           - { label: "ชื่อบนแถบเมนู", name: brandName, widget: string }
+          - { label: "คำอธิบายเว็บ (สำหรับ Google)", name: description, widget: text, required: false }
           - { label: "ข้อความท้ายเว็บ (Footer)", name: footer, widget: string }
+          - { label: "ปุ่มหลักหน้าแรก (ไม่บังคับ)", name: ctaPrimary, widget: string, required: false }
+          - { label: "ปุ่มรองหน้าแรก (ไม่บังคับ)", name: ctaSecondary, widget: string, required: false }
+          - { label: "สีหลักของเว็บ (ไม่บังคับ)", name: accent, widget: color, required: false, hint: "เว้นว่าง = ใช้สีแดงเดิม" }
           - label: "หัวข้อของแต่ละส่วน"
             name: headings
             widget: object
             fields:
-              - { label: "ประสบการณ์การทำงาน", name: experience, widget: string }
-              - { label: "การศึกษา", name: education, widget: string }
-              - { label: "ทักษะและความถนัด", name: skills, widget: string }
-              - { label: "ผลงาน", name: projects, widget: string }
-              - { label: "ช่องทางการติดต่อ", name: contact, widget: string }
+              - { label: "ประสบการณ์การทำงาน", name: experience, widget: string, required: false }
+              - { label: "การศึกษา", name: education, widget: string, required: false }
+              - { label: "ใบรับรอง (Certificates)", name: certificates, widget: string, required: false }
+              - { label: "ทักษะและความถนัด", name: skills, widget: string, required: false }
+              - { label: "ผลงาน", name: projects, widget: string, required: false }
+              - { label: "ช่องทางการติดต่อ", name: contact, widget: string, required: false }
 
       # ------------------------------------------------------------
       - name: home
@@ -102,6 +104,25 @@ collections:
               - { label: "ระดับการศึกษา", name: level, widget: string }
               - { label: "สาขา / หลักสูตร", name: title, widget: string }
               - { label: "สถาบัน", name: school, widget: string }
+              - { label: "ช่วงปี (ไม่บังคับ เช่น 2015 - 2020)", name: years, widget: string, required: false }
+
+      # ------------------------------------------------------------
+      - name: certificates
+        label: "ใบรับรอง (Certificates)"
+        file: content/certificates.json
+        fields:
+          - label: "รายการใบรับรอง"
+            name: items
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "ชื่อใบรับรอง / หลักสูตร", name: title, widget: string }
+              - { label: "หน่วยงานที่ออกให้", name: issuer, widget: string, required: false }
+              - { label: "วันที่ได้รับ (พิมพ์อิสระ เช่น มีนาคม 2567)", name: date, widget: string, required: false }
+              - { label: "รายละเอียด", name: desc, widget: text, required: false }
+              - { label: "รูปใบรับรอง (คลิกแล้วขยายดูได้)", name: image, widget: image, required: false }
+              - { label: "ลิงก์ตรวจสอบใบรับรอง (เว้นว่าง = ไม่แสดงปุ่ม)", name: link, widget: string, required: false }
+              - { label: "ข้อความบนปุ่มลิงก์ (ไม่บังคับ)", name: linkLabel, widget: string, required: false }
 
       # ------------------------------------------------------------
       - name: skills
@@ -115,13 +136,41 @@ collections:
             fields:
               - { label: "ชื่อทักษะ", name: title, widget: string }
               - { label: "คำอธิบาย", name: desc, widget: text }
+              - label: "ไอคอน (เลือกจากรายการ)"
+                name: icon
+                widget: select
+                required: false
+                hint: "เว้นว่าง = เว็บเลือกให้อัตโนมัติจากชื่อทักษะ"
+                options:
+                  - { label: "ชั้น/ระบบ", value: layers }
+                  - { label: "ติ๊กถูก/ทดสอบ", value: check }
+                  - { label: "ประแจ/ซ่อมแก้ไข", value: wrench }
+                  - { label: "ฐานข้อมูล", value: database }
+                  - { label: "โค้ด", value: code }
+                  - { label: "เทอร์มินัล", value: terminal }
+                  - { label: "กราฟ/รายงาน", value: chart }
+                  - { label: "เอกสาร", value: file }
+                  - { label: "ค้นหา/วิเคราะห์", value: search }
+                  - { label: "เซิร์ฟเวอร์", value: server }
+                  - { label: "ความปลอดภัย", value: shield }
+                  - { label: "คลาวด์", value: cloud }
+                  - { label: "ปรับตั้งค่า", value: sliders }
+                  - { label: "หลอดไฟ/ไอเดีย", value: bulb }
+                  - { label: "เป้าหมาย", value: target }
+                  - { label: "มือถือ", value: mobile }
+                  - { label: "ดีไซน์", value: palette }
+                  - { label: "กล้อง", value: camera }
+                  - { label: "ทีม/คน", value: users }
+                  - { label: "เว็บ/โลก", value: globe }
+                  - { label: "ประกาย (ค่าเริ่มต้น)", value: spark }
+              - { label: "หรืออัปโหลดไอคอนเอง (ไม่บังคับ — ถ้าใส่ จะใช้แทนไอคอนด้านบน)", name: iconImage, widget: image, required: false }
 
       # ------------------------------------------------------------
       - name: projects
         label: "ผลงาน (Projects)"
         file: content/projects.json
         fields:
-          - { label: "ข้อความปุ่มลิงก์", name: linkLabel, widget: string }
+          - { label: "ข้อความบนปุ่มลิงก์ (ใช้กับทุกผลงาน)", name: linkLabel, widget: string, required: false }
           - label: "รายการผลงาน"
             name: items
             widget: list
@@ -130,9 +179,10 @@ collections:
               - { label: "หมวด (ตัวเล็กสีแดง)", name: category, widget: string }
               - { label: "ชื่อผลงาน", name: title, widget: string }
               - { label: "คำอธิบาย", name: desc, widget: text }
-              - { label: "ป้าย (มุมซ้ายล่าง)", name: tag, widget: string }
+              - { label: "ป้าย (มุมซ้ายล่าง)", name: tag, widget: string, required: false }
               - { label: "รูปพรีวิว", name: image, widget: image, required: false }
-              - { label: "ลิงก์ดูรายละเอียด (เว้นว่าง = ไม่แสดงปุ่ม)", name: link, widget: string, required: false }
+              - { label: "ลิงก์ดูตัวอย่างผลงาน (เว้นว่าง = ไม่แสดงปุ่ม)", name: link, widget: string, required: false }
+              - { label: "ข้อความบนปุ่มของผลงานนี้ (ไม่บังคับ)", name: linkLabel, widget: string, required: false }
 
       # ------------------------------------------------------------
       - name: contact
