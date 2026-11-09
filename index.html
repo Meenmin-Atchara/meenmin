@@ -8,14 +8,16 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Prompt', sans-serif; }
+        html { scroll-padding-top: 5rem; }
+        body { font-family: 'Prompt', sans-serif; overflow-wrap: anywhere; }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .hobby-content {
-            animation: fadeIn 0.5s ease-in-out forwards;
-        }
+        .hobby-content { animation: fadeIn 0.5s ease-in-out forwards; }
+        .icon { width: 1.5rem; height: 1.5rem; }
+        dialog::backdrop { background: rgba(0, 0, 0, 0.88); }
+        @media (prefers-reduced-motion: reduce) { .hobby-content { animation: none; } html { scroll-behavior: auto; } }
     </style>
 </head>
 <body class="bg-neutral-950 text-neutral-100 antialiased selection:bg-red-600 selection:text-white">
@@ -30,38 +32,34 @@
 
     <!-- Navigation Bar -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800">
-        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#home" class="font-bold text-lg tracking-wider text-white"> <span class="text-red-600">#</span> <span id="brand-name"></span> </a>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium text-neutral-400">
-                <a href="#home" class="hover:text-red-500 transition">Home</a>
-                <a href="#hobbies" class="hover:text-red-500 transition">Hobbies</a>
-                <a href="#experience" class="hover:text-red-500 transition">Experience</a>
-                <a href="#education" class="hover:text-red-500 transition">Education</a>
-                <a href="#skills" class="hover:text-red-500 transition">Skills</a>
-                <a href="#projects" class="hover:text-red-500 transition">Projects</a>
-                <a href="#contact" class="hover:text-red-500 transition">Contact</a>
-            </nav>
+        <div class="max-w-5xl 2xl:max-w-7xl mx-auto px-6 h-16 2xl:h-20 flex items-center justify-between">
+            <a href="#home" class="font-bold text-lg 2xl:text-xl tracking-wider text-white"> <span class="text-red-600">#</span> <span id="brand-name"></span> </a>
+            <nav id="nav-desktop" class="hidden lg:flex space-x-8 text-sm 2xl:text-base font-medium text-neutral-400"></nav>
+            <button id="menu-btn" type="button" aria-label="เมนู" aria-expanded="false" class="lg:hidden w-11 h-11 -mr-2 flex items-center justify-center rounded-lg hover:bg-neutral-900 text-white cursor-pointer">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            </button>
         </div>
+        <nav id="nav-mobile" class="hidden lg:hidden border-t border-neutral-800 bg-neutral-950 px-6 py-3 grid grid-cols-2 gap-1 text-sm text-neutral-300"></nav>
     </header>
 
     <!-- 1. Home Section -->
-    <section id="home" class="pt-32 pb-16 px-6 max-w-5xl mx-auto min-h-[85vh] flex flex-col justify-center">
+    <section id="home" class="pt-32 pb-16 px-6 max-w-5xl 2xl:max-w-7xl mx-auto min-h-[85vh] flex flex-col justify-center">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
-            <div class="md:col-span-2 space-y-6">
-                <span id="home-badge" class="inline-block px-3 py-1 bg-red-950/60 border border-red-800/50 text-red-400 text-xs font-semibold rounded-full uppercase tracking-wider"></span>
-                <h1 id="home-name" class="text-4xl md:text-5xl font-bold tracking-tight text-white"></h1>
-                <p id="home-intro" class="text-neutral-400 text-lg leading-relaxed whitespace-pre-line"></p>
+            <div class="md:col-span-2 space-y-6 order-2 md:order-1">
+                <span id="home-badge" class="inline-block px-3 py-1 bg-red-950/60 border border-red-800/50 text-red-400 text-xs 2xl:text-sm font-semibold rounded-full uppercase tracking-wider"></span>
+                <h1 id="home-name" class="text-4xl md:text-5xl 2xl:text-7xl font-bold tracking-tight text-white"></h1>
+                <p id="home-intro" class="text-neutral-400 text-lg 2xl:text-2xl leading-relaxed whitespace-pre-line"></p>
 
                 <div class="pt-2">
-                    <div class="p-4 rounded-xl bg-neutral-900 border border-neutral-800">
-                        <h3 id="home-strengths-title" class="text-sm font-semibold text-red-500 uppercase tracking-wide mb-1"></h3>
-                        <p id="home-strengths-text" class="text-sm text-neutral-300 whitespace-pre-line"></p>
+                    <div class="p-4 2xl:p-6 rounded-xl bg-neutral-900 border border-neutral-800">
+                        <h3 id="home-strengths-title" class="text-sm 2xl:text-base font-semibold text-red-500 uppercase tracking-wide mb-1"></h3>
+                        <p id="home-strengths-text" class="text-sm 2xl:text-lg text-neutral-300 whitespace-pre-line"></p>
                     </div>
                 </div>
             </div>
 
-            <div class="flex justify-center">
-                <div class="w-50 h-50 md:w-64 md:h-100 rounded-2xl bg-gradient-to-br from-red-600 to-neutral-900 p-1 shadow-2xl shadow-red-950/40">
+            <div class="flex justify-center order-1 md:order-2">
+                <div class="w-56 h-56 sm:w-64 sm:h-64 md:w-full md:max-w-xs 2xl:max-w-sm md:h-auto md:aspect-[3/4] rounded-2xl bg-gradient-to-br from-red-600 to-neutral-900 p-1 shadow-2xl shadow-red-950/40">
                     <div class="w-full h-full bg-neutral-900 rounded-2xl flex items-center justify-center text-neutral-500 text-sm overflow-hidden">
                         <img id="home-image" src="" alt="Profile" class="w-full h-full object-cover rounded-2xl hidden">
                     </div>
@@ -71,11 +69,11 @@
     </section>
 
     <!-- 2. Hobbies Section -->
-    <section id="hobbies" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
+    <section id="hobbies" class="py-20 px-6 max-w-5xl 2xl:max-w-7xl mx-auto border-t border-neutral-900">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
             <div>
-                <span id="hobbies-eyebrow" class="text-xs text-red-500 font-semibold uppercase tracking-widest block mb-2"></span>
-                <h2 class="text-4xl md:text-6xl font-black tracking-tight text-white leading-none">
+                <span id="hobbies-eyebrow" class="text-xs 2xl:text-sm text-red-500 font-semibold uppercase tracking-widest block mb-2"></span>
+                <h2 class="text-4xl md:text-6xl 2xl:text-7xl font-black tracking-tight text-white leading-none">
                     <span id="hobbies-title1"></span> <br><span id="hobbies-title2" class="text-red-600"></span>
                 </h2>
             </div>
@@ -94,53 +92,69 @@
     </section>
 
     <!-- 3. Experience Section -->
-    <section id="experience" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
-        <h2 class="text-2xl font-bold text-white mb-10 flex items-center gap-3">
-            <span class="w-3 h-3 bg-red-600 rounded-full"></span> <span id="experience-title"></span>
+    <section id="experience" class="py-20 px-6 max-w-5xl 2xl:max-w-7xl mx-auto border-t border-neutral-900">
+        <h2 class="text-2xl 2xl:text-4xl font-bold text-white mb-10 flex items-center gap-3">
+            <span class="w-3 h-3 bg-red-600 rounded-full shrink-0"></span> <span id="experience-title"></span>
         </h2>
         <div id="experience-list" class="space-y-6 border-l-2 border-neutral-800 pl-6 ml-2"></div>
     </section>
 
     <!-- 4. Education Section -->
-    <section id="education" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
-        <h2 class="text-2xl font-bold text-white mb-10 flex items-center gap-3">
-            <span class="w-3 h-3 bg-red-600 rounded-full"></span> <span id="education-title"></span>
+    <section id="education" class="py-20 px-6 max-w-5xl 2xl:max-w-7xl mx-auto border-t border-neutral-900">
+        <h2 class="text-2xl 2xl:text-4xl font-bold text-white mb-10 flex items-center gap-3">
+            <span class="w-3 h-3 bg-red-600 rounded-full shrink-0"></span> <span id="education-title"></span>
         </h2>
-        <div id="education-list" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+        <div id="education-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </section>
 
-    <!-- 5. Skills Section -->
-    <section id="skills" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
-        <h2 class="text-2xl font-bold text-white mb-10 flex items-center gap-3">
-            <span class="w-3 h-3 bg-red-600 rounded-full"></span> <span id="skills-title"></span>
+    <!-- 5. Certificates Section -->
+    <section id="certificates" class="py-20 px-6 max-w-5xl 2xl:max-w-7xl mx-auto border-t border-neutral-900">
+        <h2 class="text-2xl 2xl:text-4xl font-bold text-white mb-10 flex items-center gap-3">
+            <span class="w-3 h-3 bg-red-600 rounded-full shrink-0"></span> <span id="certificates-title"></span>
         </h2>
-        <div id="skills-list" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+        <div id="certs-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </section>
 
-    <!-- 6. Projects Section -->
-    <section id="projects" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
-        <h2 class="text-2xl font-bold text-white mb-10 flex items-center gap-3">
-            <span class="w-3 h-3 bg-red-600 rounded-full"></span> <span id="projects-title"></span>
+    <!-- 6. Skills Section -->
+    <section id="skills" class="py-20 px-6 max-w-5xl 2xl:max-w-7xl mx-auto border-t border-neutral-900">
+        <h2 class="text-2xl 2xl:text-4xl font-bold text-white mb-10 flex items-center gap-3">
+            <span class="w-3 h-3 bg-red-600 rounded-full shrink-0"></span> <span id="skills-title"></span>
         </h2>
-        <div id="projects-list" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+        <div id="skills-list" class="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-4"></div>
     </section>
 
-    <!-- 7. Contact Section -->
-    <section id="contact" class="py-20 px-6 max-w-5xl mx-auto border-t border-neutral-900">
-        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-            <span class="w-3 h-3 bg-red-600 rounded-full"></span> <span id="contact-title"></span>
+    <!-- 7. Projects Section -->
+    <section id="projects" class="py-20 px-6 max-w-5xl 2xl:max-w-7xl mx-auto border-t border-neutral-900">
+        <h2 class="text-2xl 2xl:text-4xl font-bold text-white mb-10 flex items-center gap-3">
+            <span class="w-3 h-3 bg-red-600 rounded-full shrink-0"></span> <span id="projects-title"></span>
         </h2>
-        <p id="contact-intro" class="text-neutral-400 mb-8 whitespace-pre-line"></p>
+        <div id="projects-list" class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- 8. Contact Section -->
+    <section id="contact" class="py-20 px-6 max-w-5xl 2xl:max-w-7xl mx-auto border-t border-neutral-900">
+        <h2 class="text-2xl 2xl:text-4xl font-bold text-white mb-6 flex items-center gap-3">
+            <span class="w-3 h-3 bg-red-600 rounded-full shrink-0"></span> <span id="contact-title"></span>
+        </h2>
+        <p id="contact-intro" class="text-neutral-400 2xl:text-lg mb-8 whitespace-pre-line"></p>
         <div id="contact-list" class="flex flex-wrap gap-4"></div>
     </section>
 
     <!-- Footer -->
-    <footer id="site-footer" class="py-8 text-center text-xs text-neutral-600 border-t border-neutral-900"></footer>
+    <footer id="site-footer" class="py-8 px-6 text-center text-xs text-neutral-600 border-t border-neutral-900"></footer>
+
+    <!-- ดูรูปขยาย -->
+    <dialog id="lightbox" aria-label="รูปขยาย" class="m-auto bg-transparent p-0 max-w-[96vw] max-h-[94vh] overflow-visible text-white">
+        <button type="button" data-close aria-label="ปิด" class="absolute top-2 right-2 z-10 w-11 h-11 rounded-full bg-white text-black flex items-center justify-center cursor-pointer text-xl">&times;</button>
+        <figure class="m-0">
+            <img id="lightbox-img" alt="" class="max-w-[96vw] max-h-[82vh] w-auto h-auto mx-auto rounded-lg bg-white">
+            <figcaption id="lightbox-cap" class="mt-3 text-center font-semibold"></figcaption>
+        </figure>
+    </dialog>
 
     <!-- JavaScript: โหลดเนื้อหาจาก content/*.json แล้วนำมาแสดงตาม template ด้านบน -->
     <script>
         // ---------- ตัวช่วย ----------
-        // escape ข้อความก่อนใส่ลง HTML เพื่อความปลอดภัย
         const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => (
             { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
         ));
@@ -151,12 +165,51 @@
         };
         const $ = (id) => document.getElementById(id);
         const setText = (id, text) => { $(id).textContent = text ?? ''; };
+        const itemsOf = (d) => (d && Array.isArray(d.items) ? d.items : []);
 
-        const loadJson = (name) =>
-            fetch(`content/${name}.json`, { cache: 'no-cache' }).then((res) => {
-                if (!res.ok) throw new Error(`โหลด content/${name}.json ไม่ได้ (${res.status})`);
-                return res.json();
-            });
+        // ---------- ไอคอน (เส้นบาง สีตามตัวอักษร) ----------
+        const ICONS = {
+            layers: '<path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 12.5 9 5 9-5"/><path d="m3 17 9 5 9-5"/>',
+            check: '<circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.8 2.8 5.7-5.8"/>',
+            wrench: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>',
+            database: '<ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.66 3.58 3 8 3s8-1.34 8-3v-13"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/>',
+            code: '<path d="m8 8-4.5 4L8 16"/><path d="m16 8 4.5 4L16 16"/><path d="m13.5 5-3 14"/>',
+            chart: '<path d="M4 4v16h16"/><path d="M8.5 16v-5"/><path d="M12.5 16V7.5"/><path d="M16.5 16v-3"/>',
+            palette: '<path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.8-.9 1.5-1.9-.3-1 .3-2.1 1.4-2.1H17a4 4 0 0 0 4-4c0-5-4-10-9-10Z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7" r="1"/>',
+            users: '<circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.6"/><path d="M17 14.2c2.4.3 4 2.3 4 5"/>',
+            spark: '<path d="M12 3c.6 4.6 2.4 6.4 7 7-4.6.6-6.4 2.4-7 7-.6-4.6-2.4-6.4-7-7 4.6-.6 6.4-2.4 7-7Z"/>',
+            window: '<rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18"/><path d="M7 6.6h.01M10 6.6h.01"/>',
+            arrow: '<path d="M7 17 17 7"/><path d="M8 7h9v9"/>',
+            globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.6 2.6 3.9 5.6 3.9 9S14.6 18.4 12 21c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3Z"/>',
+            server: '<rect x="3" y="4" width="18" height="6.5" rx="2"/><rect x="3" y="13.5" width="18" height="6.5" rx="2"/><path d="M7 7.25h.01M7 16.75h.01"/>',
+            shield: '<path d="M12 3 4.5 6v5.5c0 4.4 3.1 8.2 7.5 9.5 4.4-1.3 7.5-5.1 7.5-9.5V6L12 3Z"/><path d="m9 12 2.2 2.2L15.2 10"/>',
+            cloud: '<path d="M7.5 18.5a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18.4 9.8 4.35 4.35 0 0 1 17.5 18.5h-10Z"/>',
+            sliders: '<path d="M4 7h9"/><path d="M17 7h3"/><circle cx="15" cy="7" r="2"/><path d="M4 17h3"/><path d="M11 17h9"/><circle cx="9" cy="17" r="2"/>',
+            bulb: '<path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.1 1.4 1.1 2.2h5c0-.8.4-1.6 1.1-2.2A6 6 0 0 0 12 3Z"/>',
+            target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/>',
+            mobile: '<rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/>',
+            file: '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/>',
+            search: '<circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/>',
+            terminal: '<rect x="3" y="4.5" width="18" height="15" rx="2.5"/><path d="m7.5 9.5 3 2.5-3 2.5"/><path d="M13 15h3.5"/>',
+            camera: '<path d="M4 8.5A1.5 1.5 0 0 1 5.5 7h2.2l1.2-2h6.2l1.2 2h2.2A1.5 1.5 0 0 1 20 8.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 17.5v-9Z"/><circle cx="12" cy="13" r="3.4"/>',
+            award: '<circle cx="12" cy="9" r="5.5"/><path d="m8.8 13.6-1.3 7 4.5-2.4 4.5 2.4-1.3-7"/>'
+        };
+        const icon = (name, cls) =>
+            `<svg class="icon ${cls || ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name] || ICONS.spark}</svg>`;
+        const SKILL_ICONS = ['layers', 'check', 'wrench', 'database', 'code', 'terminal', 'chart', 'file', 'search', 'server', 'shield', 'cloud', 'sliders', 'bulb', 'target', 'mobile', 'palette', 'camera', 'users', 'globe', 'spark'];
+        function skillIcon(it) {
+            if (SKILL_ICONS.includes(it.icon)) return it.icon;
+            const t = String(it.title || '').toLowerCase();
+            if (/test|quality|qa/.test(t)) return 'check';
+            if (/support|trouble|help|repair/.test(t)) return 'wrench';
+            if (/database|report|data|sql/.test(t)) return 'database';
+            if (/code|develop|program/.test(t)) return 'code';
+            if (/server|network|infra/.test(t)) return 'server';
+            if (/security|secure/.test(t)) return 'shield';
+            if (/graphic|design|ui|ux/.test(t) && !/system/.test(t)) return 'palette';
+            if (/system|analysis|analy/.test(t)) return 'layers';
+            return 'spark';
+        }
 
         // ---------- แต่ละส่วนของหน้า ----------
         function renderSettings(s) {
@@ -166,6 +219,7 @@
             const h = s.headings || {};
             setText('experience-title', h.experience);
             setText('education-title', h.education);
+            setText('certificates-title', h.certificates || 'ใบรับรองและประกาศนียบัตร');
             setText('skills-title', h.skills);
             setText('projects-title', h.projects);
             setText('contact-title', h.contact);
@@ -186,65 +240,113 @@
         }
 
         function renderExperience(data) {
-            $('experience-list').innerHTML = (data.items || []).map((it) => `
+            $('experience-list').innerHTML = itemsOf(data).map((it) => `
                 <div class="relative">
                     <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full ${it.current ? 'bg-red-600' : 'bg-neutral-700'} border-4 border-neutral-950"></div>
-                    ${it.period ? `<span class="text-xs text-red-500 font-semibold">${esc(it.period)}</span>` : ''}
-                    <h3 class="text-lg font-semibold text-white mt-1">${esc(it.title)}</h3>
-                    <p class="text-sm text-neutral-400">${esc(it.company)}</p>
+                    ${it.period ? `<span class="text-xs 2xl:text-sm text-red-500 font-semibold">${esc(it.period)}</span>` : ''}
+                    <h3 class="text-lg 2xl:text-xl font-semibold text-white mt-1">${esc(it.title)}</h3>
+                    <p class="text-sm 2xl:text-base text-neutral-400">${esc(it.company)}</p>
                 </div>
             `).join('');
         }
 
         function renderEducation(data) {
-            $('education-list').innerHTML = (data.items || []).map((it) => `
+            $('education-list').innerHTML = itemsOf(data).map((it) => `
                 <div class="p-6 rounded-xl bg-neutral-900/60 border border-neutral-800">
-                    <span class="text-xs text-red-500 font-semibold">${esc(it.level)}</span>
-                    <h3 class="text-lg font-bold text-white mt-1">${esc(it.title)}</h3>
-                    <p class="text-sm text-neutral-400 mt-2">${esc(it.school)}</p>
+                    <span class="text-xs 2xl:text-sm text-red-500 font-semibold">${esc(it.level)}${it.years ? ' · ' + esc(it.years) : ''}</span>
+                    <h3 class="text-lg 2xl:text-xl font-bold text-white mt-1">${esc(it.title)}</h3>
+                    <p class="text-sm 2xl:text-base text-neutral-400 mt-2">${esc(it.school)}</p>
                 </div>
             `).join('');
         }
 
         function renderSkills(data) {
-            $('skills-list').innerHTML = (data.items || []).map((it) => `
-                <div class="p-5 rounded-xl bg-neutral-900 border border-neutral-800">
-                    <h3 class="font-semibold text-white mb-2">${esc(it.title)}</h3>
-                    <p class="text-sm text-neutral-400">${esc(it.desc)}</p>
-                </div>
-            `).join('');
+            $('skills-list').innerHTML = itemsOf(data).map((it) => {
+                const img = safeUrl(it.iconImage);
+                return `
+                <div class="p-5 2xl:p-6 rounded-xl bg-neutral-900 border border-neutral-800 flex gap-4 items-start hover:border-red-600/50 transition">
+                    <span class="shrink-0 w-12 h-12 rounded-xl bg-red-950/60 border border-red-800/50 text-red-500 flex items-center justify-center overflow-hidden">${img
+                        ? `<img src="${esc(img)}" alt="" loading="lazy" class="w-full h-full object-contain p-2">`
+                        : icon(skillIcon(it))}</span>
+                    <div class="min-w-0">
+                        <h3 class="font-semibold text-white mb-1 2xl:text-lg">${esc(it.title)}</h3>
+                        <p class="text-sm 2xl:text-base text-neutral-400 whitespace-pre-line">${esc(it.desc)}</p>
+                    </div>
+                </div>`;
+            }).join('');
         }
 
+        const stripArrow = (t) => String(t || '').replace(/\s*[→➜➔›»>]+\s*$/u, '');
         function renderProjects(data) {
-            const linkLabel = data.linkLabel || 'ดูรายละเอียด →';
-            $('projects-list').innerHTML = (data.items || []).map((it) => {
+            const defaultLabel = stripArrow(data.linkLabel) || 'ดูตัวอย่างผลงาน';
+            $('projects-list').innerHTML = itemsOf(data).map((it) => {
                 const img = safeUrl(it.image);
                 const link = safeUrl(it.link);
+                const label = stripArrow(it.linkLabel) || defaultLabel;
                 return `
                 <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between hover:border-red-600/50 transition">
                     <div>
-                        <div class="h-40 bg-neutral-950 rounded-lg mb-4 flex items-center justify-center text-neutral-600 text-sm overflow-hidden">
+                        <div class="h-40 sm:h-48 bg-neutral-950 rounded-lg mb-4 flex items-center justify-center text-neutral-600 text-sm overflow-hidden">
                             ${img
-                                ? `<img src="${esc(img)}" alt="${esc(it.title)}" class="w-full h-full object-cover">`
-                                : '[ รูปภาพพรีวิวผลงาน ]'}
+                                ? `<img src="${esc(img)}" alt="${esc(it.title)}" loading="lazy" class="w-full h-full object-cover">`
+                                : icon('window', '!w-10 !h-10 opacity-60')}
                         </div>
-                        <span class="text-xs text-red-500 font-semibold uppercase">${esc(it.category)}</span>
-                        <h3 class="text-xl font-semibold text-white mt-1">${esc(it.title)}</h3>
-                        <p class="text-neutral-400 text-sm mt-2 whitespace-pre-line">${esc(it.desc)}</p>
+                        ${it.category ? `<span class="text-xs 2xl:text-sm text-red-500 font-semibold uppercase">${esc(it.category)}</span>` : ''}
+                        <h3 class="text-xl 2xl:text-2xl font-semibold text-white mt-1">${esc(it.title)}</h3>
+                        <p class="text-neutral-400 text-sm 2xl:text-base mt-2 whitespace-pre-line">${esc(it.desc)}</p>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-neutral-800 flex justify-between items-center">
-                        <span class="text-xs bg-neutral-800 text-neutral-300 px-2.5 py-1 rounded">${esc(it.tag)}</span>
+                    <div class="mt-6 pt-4 border-t border-neutral-800 flex flex-wrap gap-3 justify-between items-center">
+                        ${it.tag ? `<span class="text-xs bg-neutral-800 text-neutral-300 px-2.5 py-1 rounded">${esc(it.tag)}</span>` : '<span></span>'}
                         ${link
-                            ? `<a href="${esc(link)}" target="_blank" rel="noopener" class="text-sm font-medium text-red-500 hover:text-red-400">${esc(linkLabel)}</a>`
+                            ? `<a href="${esc(link)}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-red-700/60 text-sm font-medium text-red-400 hover:bg-red-600 hover:border-red-600 hover:text-white transition">${esc(label)} ${icon('arrow', '!w-4 !h-4')}</a>`
                             : ''}
                     </div>
                 </div>`;
             }).join('');
         }
 
+        // ---------- Certificates + ดูรูปขยาย ----------
+        let certItems = [];
+        function renderCertificates(data) {
+            certItems = itemsOf(data);
+            $('certs-list').innerHTML = certItems.map((it, i) => {
+                const img = safeUrl(it.image);
+                const link = safeUrl(it.link);
+                return `
+                <div class="bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden flex flex-col hover:border-red-600/50 transition">
+                    ${img
+                        ? `<button type="button" data-i="${i}" aria-label="ดูรูปขยาย: ${esc(it.title)}" class="cert-img block w-full aspect-[4/3] bg-neutral-950 p-3 cursor-zoom-in"><img src="${esc(img)}" alt="${esc(it.title)}" loading="lazy" class="w-full h-full object-contain"></button>`
+                        : `<div class="w-full aspect-[4/3] bg-neutral-950 flex items-center justify-center text-neutral-600">${icon('award', '!w-12 !h-12 opacity-70')}</div>`}
+                    <div class="p-5 flex flex-col items-start gap-1 flex-1">
+                        <h3 class="text-lg 2xl:text-xl font-semibold text-white">${esc(it.title)}</h3>
+                        ${it.issuer ? `<p class="text-sm text-red-500 font-semibold">${esc(it.issuer)}</p>` : ''}
+                        ${it.date ? `<p class="text-xs text-neutral-500">${esc(it.date)}</p>` : ''}
+                        ${it.desc ? `<p class="text-sm 2xl:text-base text-neutral-400 mt-2 whitespace-pre-line">${esc(it.desc)}</p>` : ''}
+                        ${link ? `<a href="${esc(link)}" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-red-700/60 text-sm font-medium text-red-400 hover:bg-red-600 hover:border-red-600 hover:text-white transition">${esc(it.linkLabel || 'ตรวจสอบใบรับรอง')} ${icon('arrow', '!w-4 !h-4')}</a>` : ''}
+                    </div>
+                </div>`;
+            }).join('');
+        }
+        function setupLightbox() {
+            const dlg = $('lightbox');
+            $('certs-list').addEventListener('click', (e) => {
+                const b = e.target.closest('.cert-img');
+                if (!b) return;
+                const it = certItems[+b.dataset.i];
+                const src = safeUrl(it.image);
+                if (typeof dlg.showModal !== 'function') { window.open(src, '_blank', 'noopener'); return; }
+                $('lightbox-img').src = src;
+                $('lightbox-img').alt = it.title || '';
+                setText('lightbox-cap', it.title);
+                dlg.showModal();
+            });
+            dlg.addEventListener('click', (e) => { if (e.target === dlg || e.target.closest('[data-close]')) dlg.close(); });
+            dlg.addEventListener('close', () => $('lightbox-img').removeAttribute('src'));
+        }
+
         function renderContact(c) {
             setText('contact-intro', c.intro);
-            const btn = 'px-5 py-2.5 bg-neutral-900 border border-neutral-800 hover:border-red-600 rounded-lg text-sm font-medium transition text-white';
+            const btn = 'px-5 py-2.5 bg-neutral-900 border border-neutral-800 hover:border-red-600 rounded-lg text-sm 2xl:text-base font-medium transition text-white';
             let html = '';
             if (c.email) {
                 html += `<a href="mailto:${esc(c.email)}" class="${btn} flex items-center gap-2"><span>📧</span> ${esc(c.email)}</a>`;
@@ -279,22 +381,21 @@
                 return `
                     <div class="aspect-[4/3] bg-neutral-900 border border-neutral-800 rounded-2xl flex items-center justify-center text-neutral-600 text-sm overflow-hidden shadow-inner">
                         ${src
-                            ? `<img src="${esc(src)}" alt="${esc(cur.title)}" class="w-full h-full object-cover">`
+                            ? `<img src="${esc(src)}" alt="${esc(cur.title)}" loading="lazy" class="w-full h-full object-cover">`
                             : `<span class="text-center p-2">[ รูป ${i + 1} ]</span>`}
                     </div>`;
             }).join('');
 
             container.innerHTML = `
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    <div class="lg:col-span-8 grid grid-cols-2 gap-4">${slots}</div>
-                    <div class="lg:col-span-4 space-y-4 lg:pl-6 border-l border-neutral-800/60">
-                        <span class="text-xs text-red-500 font-semibold uppercase tracking-wider">${esc(window.hobbySideLabel)}</span>
-                        <h3 class="text-2xl font-bold text-white">${esc(cur.title)}</h3>
-                        <p class="text-neutral-400 text-sm leading-relaxed whitespace-pre-line">${esc(cur.desc)}</p>
+                    <div class="lg:col-span-8 grid grid-cols-2 gap-3 sm:gap-4">${slots}</div>
+                    <div class="lg:col-span-4 space-y-4 lg:pl-6 lg:border-l border-neutral-800/60">
+                        <span class="text-xs 2xl:text-sm text-red-500 font-semibold uppercase tracking-wider">${esc(window.hobbySideLabel)}</span>
+                        <h3 class="text-2xl 2xl:text-3xl font-bold text-white">${esc(cur.title)}</h3>
+                        <p class="text-neutral-400 text-sm 2xl:text-base leading-relaxed whitespace-pre-line">${esc(cur.desc)}</p>
                     </div>
                 </div>
             `;
-            // เล่นแอนิเมชันเฟดใหม่ทุกครั้งที่สลับหัวข้อ
             container.classList.remove('hobby-content');
             void container.offsetWidth;
             container.classList.add('hobby-content');
@@ -312,30 +413,65 @@
             setText('hobbies-title1', data.titleLine1);
             setText('hobbies-title2', data.titleLine2);
             window.hobbySideLabel = data.sideLabel || '';
-            hobbyCategories = data.items || [];
+            hobbyCategories = itemsOf(data);
             currentCategoryIndex = 0;
             $('hobby-bars').innerHTML = hobbyCategories.map((_, i) => `<div id="bar-${i}"></div>`).join('');
             renderHobbySection();
         }
 
+        // ---------- เมนู (ซ่อนหัวข้อที่ไม่มีข้อมูล) + เมนูมือถือ ----------
+        function setupNav(has) {
+            const LABELS = [['home', 'Home'], ['hobbies', 'Hobbies'], ['experience', 'Experience'], ['education', 'Education'], ['certificates', 'Certificates'], ['skills', 'Skills'], ['projects', 'Projects'], ['contact', 'Contact']];
+            const list = LABELS.filter(([id]) => id === 'home' || id === 'contact' || has[id]);
+            LABELS.forEach(([id]) => { if (!list.some(([x]) => x === id)) $(id).hidden = true; });
+            $('nav-desktop').innerHTML = list.map(([id, t]) => `<a href="#${id}" class="hover:text-red-500 transition">${t}</a>`).join('');
+            $('nav-mobile').innerHTML = list.map(([id, t]) => `<a href="#${id}" class="py-2.5 px-2 rounded-lg hover:bg-neutral-900 hover:text-red-500">${t}</a>`).join('');
+            const m = $('nav-mobile'), b = $('menu-btn');
+            const toggle = (open) => { m.classList.toggle('hidden', !open); b.setAttribute('aria-expanded', String(open)); };
+            b.addEventListener('click', () => toggle(m.classList.contains('hidden')));
+            m.addEventListener('click', (e) => { if (e.target.closest('a')) toggle(false); });
+            window.matchMedia('(min-width: 1024px)').addEventListener('change', (e) => { if (e.matches) toggle(false); });
+        }
+
+        // รูปที่โหลดไม่ขึ้น ให้แสดงไอคอนแทนภาพแตก
+        document.addEventListener('error', (e) => {
+            const img = e.target;
+            if (!(img instanceof HTMLImageElement) || img.id === 'home-image' || img.id === 'lightbox-img') return;
+            const p = img.parentElement;
+            if (img.closest('.cert-img')) { p.removeAttribute('data-i'); p.classList.remove('cert-img'); p.innerHTML = icon('award', '!w-12 !h-12 opacity-70 text-neutral-600'); }
+            else p.innerHTML = icon('spark', '!w-10 !h-10 opacity-60');
+            p.classList.add('flex', 'items-center', 'justify-center');
+        }, true);
+
         // ---------- เริ่มทำงาน ----------
-        Promise.all([
-            loadJson('settings'), loadJson('home'), loadJson('hobbies'), loadJson('experience'),
-            loadJson('education'), loadJson('skills'), loadJson('projects'), loadJson('contact')
-        ]).then(([settings, home, hobbies, experience, education, skills, projects, contact]) => {
+        const NAMES = ['settings', 'home', 'hobbies', 'experience', 'education', 'skills', 'projects', 'contact', 'certificates'];
+        const OPTIONAL = ['certificates']; // ไฟล์ที่ยังไม่มีได้
+        const failed = [];
+        const load = (name) => fetch(`content/${name}.json`, { cache: 'no-cache' })
+            .then((res) => { if (!res.ok) throw new Error(res.status); return res.json(); })
+            .catch(() => { if (!OPTIONAL.includes(name)) failed.push(name + '.json'); return {}; });
+
+        Promise.all(NAMES.map(load)).then(([settings, home, hobbies, experience, education, skills, projects, contact, certificates]) => {
             renderSettings(settings);
             renderHome(home);
             renderHobbies(hobbies);
             renderExperience(experience);
             renderEducation(education);
+            renderCertificates(certificates);
             renderSkills(skills);
             renderProjects(projects);
             renderContact(contact);
-        }).catch((err) => {
-            console.error(err);
-            document.body.insertAdjacentHTML('afterbegin',
-                '<div class="p-6 text-center text-red-400 text-sm">โหลดเนื้อหาไม่สำเร็จ: ' + esc(err.message) +
-                '<br>(ถ้าเปิดไฟล์ตรง ๆ จากเครื่อง ให้รันผ่านเซิร์ฟเวอร์ เช่น npx serve)</div>');
+            setupLightbox();
+            setupNav({
+                hobbies: itemsOf(hobbies).length, experience: itemsOf(experience).length,
+                education: itemsOf(education).length, certificates: itemsOf(certificates).length,
+                skills: itemsOf(skills).length, projects: itemsOf(projects).length
+            });
+            if (failed.length) {
+                document.body.insertAdjacentHTML('afterbegin',
+                    '<div class="p-3 pt-20 text-center text-red-400 text-sm">โหลดเนื้อหาบางส่วนไม่สำเร็จ: ' + esc(failed.join(', ')) +
+                    '<br>(ถ้าเปิดไฟล์ตรง ๆ จากเครื่อง ให้รันผ่านเซิร์ฟเวอร์ เช่น npx serve)</div>');
+            }
         });
     </script>
 </body>
