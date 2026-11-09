@@ -160,22 +160,14 @@
         ));
         // กันลิงก์อันตราย เช่น javascript:
 
-function safeUrl(url) {
-            if (!url) return '';
-            let cleaned = url.trim();
-            
-            // ป้องกัน URL ที่ไม่ปลอดภัย
-            if (cleaned.startsWith('javascript:') || cleaned.startsWith('data:text/html')) {
-                return '';
-            }
-            
-            // ถ้า path ขึ้นต้นด้วย / ให้แปลงเป็น ./ เพื่อให้ GitHub Pages / Sub-path อ่านเจอรูปได้ถูกต้อง
-            if (cleaned.startsWith('/')) {
-                cleaned = '.' + cleaned;
-            }
-            
-            return cleaned;
-        }
+        const safeUrl = (u) => {
+            u = String(u ?? '').trim();
+            return /^(javascript|data|vbscript):/i.test(u) ? '' : u;
+        };
+        const $ = (id) => document.getElementById(id);
+        const setText = (id, text) => { $(id).textContent = text ?? ''; };
+        const itemsOf = (d) => (d && Array.isArray(d.items) ? d.items : []);
+        
         // ---------- ไอคอน (เส้นบาง สีตามตัวอักษร) ----------
         const ICONS = {
             layers: '<path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 12.5 9 5 9-5"/><path d="m3 17 9 5 9-5"/>',
