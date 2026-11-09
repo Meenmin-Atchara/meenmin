@@ -1,10 +1,15 @@
 {
   "pageTitle": "Meen Atchara - Portfolio",
   "brandName": "MEEN ATCHARA",
+  "description": "",
   "footer": "© 2023 By Meenmin-Atchara.",
+  "ctaPrimary": "",
+  "ctaSecondary": "",
+  "accent": "",
   "headings": {
     "experience": "ประสบการณ์การทำงาน",
     "education": "การศึกษา",
+    "certificates": "ใบรับรองและการเข้าอบรม",
     "skills": "ทักษะและความถนัด",
     "projects": "ตัวอย่างผลงาน (Projects)",
     "contact": "ช่องทางการติดต่อ"
