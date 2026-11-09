@@ -10,7 +10,7 @@ site_url: https://meenmin-atchara.netlify.app
 
 # โฟลเดอร์เก็บรูปที่อัปโหลดผ่านหลังบ้าน
 media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
+public_folder: "assets/uploads"
 
 collections:
   - name: site
