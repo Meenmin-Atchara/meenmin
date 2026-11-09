@@ -117,22 +117,22 @@ collections:
               - { label: "ช่วงปี (ไม่บังคับ เช่น 2015 - 2020)", name: years, widget: string, required: false }
 
       # ------------------------------------------------------------
-      - name: certificates
-        label: "ใบรับรอง (Certificates)"
-        file: content/certificates.json
+- name: certificates
+    label: "ใบรับรอง (Certificates)"
+    file: content/certificates.json
+    fields:
+      - label: "รายการใบรับรอง"
+        name: items
+        widget: list
+        summary: "{{fields.title}}"
         fields:
-          - label: "รายการใบรับรอง"
-            name: items
-            widget: list
-            summary: "{{fields.title}}"
-            fields:
-              - { label: "ชื่อใบรับรอง / หลักสูตร", name: title, widget: string }
-              - { label: "หน่วยงานที่ออกให้", name: issuer, widget: string, required: false }
-              - { label: "วันที่ได้รับ (พิมพ์อิสระ เช่น มีนาคม 2567)", name: date, widget: string, required: false }
-              - { label: "รายละเอียด", name: desc, widget: text, required: false }
-              - { label: "รูปใบรับรอง (คลิกแล้วขยายดูได้)", name: image, widget: image, required: false }
-              - { label: "ลิงก์ตรวจสอบใบรับรอง (เว้นว่าง = ไม่แสดงปุ่ม)", name: link, widget: string, required: false }
-              - { label: "ข้อความบนปุ่มลิงก์ (ไม่บังคับ)", name: linkLabel, widget: string, required: false }
+          - { label: "ชื่อใบรับรอง / หลักสูตร", name: title, widget: string }
+          - { label: "หน่วยงานที่ออกให้", name: issuer, widget: string, required: false }
+          - { label: "วันที่ได้รับ (พิมพ์อิสระ เช่น มีนาคม 2567)", name: date, widget: string, required: false }
+          - { label: "รายละเอียด", name: desc, widget: text, required: false }
+          - { label: "รูปใบรับรอง (คลิกแล้วขยายดูได้)", name: image, widget: image, required: false }
+          - { label: "ลิงก์ตรวจสอบใบรับรอง (เว้นว่าง = ไม่แสดงปุ่ม)", name: link, widget: string, required: false }
+          - { label: "ข้อความบนปุ่มลิงก์ (ไม่บังคับ)", name: linkLabel, widget: string, required: false }
 
       # ------------------------------------------------------------
       - name: skills
