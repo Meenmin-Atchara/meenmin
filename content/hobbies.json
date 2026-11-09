@@ -22,11 +22,17 @@
     {
       "title": "Workouts 🏋️‍♀️",
       "desc": "Weight training and running.",
-      "images": []
+      "images": [
+        "/assets/uploads/S__91512844.jpg",
+        "/assets/uploads/S__91512847.jpg",
+        "/assets/uploads/S__91512845.jpg",
+        "/assets/uploads/S__91512846.jpg"
+      ]
     },
     {
       "title": "Gaming & Coding",
-      "desc": "Exploring virtual worlds and building creative side projects."
+      "desc": "Exploring virtual worlds and building creative side projects.",
+      "images": []
     }
   ]
 }
