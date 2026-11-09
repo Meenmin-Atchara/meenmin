@@ -29,6 +29,16 @@ collections:
           - { label: "ข้อความท้ายเว็บ (Footer)", name: footer, widget: string }
           - { label: "ปุ่มหลักหน้าแรก (ไม่บังคับ)", name: ctaPrimary, widget: string, required: false }
           - { label: "ปุ่มรองหน้าแรก (ไม่บังคับ)", name: ctaSecondary, widget: string, required: false }
+          - label: "ขนาดตัวอักษรทั้งเว็บ"
+            name: fontSize
+            widget: select
+            default: normal
+            required: false
+            options:
+              - { label: "เล็ก", value: small }
+              - { label: "ปกติ", value: normal }
+              - { label: "ใหญ่", value: large }
+              - { label: "ใหญ่มาก", value: xlarge }
           - { label: "สีหลักของเว็บ (ไม่บังคับ)", name: accent, widget: color, required: false, hint: "เว้นว่าง = ใช้สีแดงเดิม" }
           - label: "หัวข้อของแต่ละส่วน"
             name: headings
