@@ -7,6 +7,7 @@
     {
       "title": "Hit the Road 🚗",
       "desc": "Finding happiness on the open road and embracing new scenic views.",
+      "imageFit": "center",
       "images": [
         "assets/uploads/s__91414534_0.jpg",
         "assets/uploads/s__91414533_0.jpg",
@@ -17,11 +18,13 @@
     {
       "title": "Music 🎸",
       "desc": "Playing instruments and expressing feelings through music.",
+      "imageFit": "center",
       "images": []
     },
     {
       "title": "Workouts 🏋️‍♀️",
       "desc": "Weight training and running.",
+      "imageFit": "whole",
       "images": [
         "/assets/uploads/S__91512844.jpg",
         "/assets/uploads/S__91512843.jpg",
@@ -32,7 +35,13 @@
     {
       "title": "Gaming & Coding",
       "desc": "Exploring virtual worlds and building creative side projects.",
-      "images": []
+      "imageFit": "center",
+      "images": [
+        "/assets/uploads/S__91537412.jpg",
+        "/assets/uploads/S__91537414.jpg",
+        "/assets/uploads/S__91537415.jpg",
+        "/assets/uploads/S__91537416.jpg"
+      ]
     }
   ]
 }
