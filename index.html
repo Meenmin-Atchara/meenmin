@@ -381,12 +381,15 @@
             });
 
             // แสดงรูปสูงสุด 4 ช่อง ช่องไหนไม่มีรูปจะขึ้นกรอบเปล่า
+            // รูปแบบการแสดงรูป: whole = เห็นทั้งรูป, top = เต็มกรอบเน้นส่วนบน, center = เต็มกรอบเน้นกลาง (ค่าเริ่มต้น)
+            const FIT = { whole: 'object-contain', top: 'object-cover object-top', center: 'object-cover object-center', bottom: 'object-cover object-bottom' };
+            const fit = FIT[cur.imageFit] || FIT.center;
             const slots = [0, 1, 2, 3].map((i) => {
                 const src = safeUrl((cur.images || [])[i]);
                 return `
                     <div class="aspect-[4/3] bg-neutral-900 border border-neutral-800 rounded-2xl flex items-center justify-center text-neutral-600 text-sm overflow-hidden shadow-inner">
                         ${src
-                            ? `<img src="${esc(src)}" alt="${esc(cur.title)}" loading="lazy" class="w-full h-full object-cover">`
+                            ? `<img src="${esc(src)}" alt="${esc(cur.title)}" loading="lazy" class="w-full h-full ${fit}">`
                             : `<span class="text-center p-2">[ รูป ${i + 1} ]</span>`}
                     </div>`;
             }).join('');
