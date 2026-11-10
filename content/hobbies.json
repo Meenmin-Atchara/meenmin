@@ -13,13 +13,21 @@
         "assets/uploads/s__91414533_0.jpg",
         "assets/uploads/s__91414531_0.jpg",
         "assets/uploads/s__91414532_0.jpg"
-      ]
+      ],
+      "pos1": "",
+      "pos2": "",
+      "pos3": "",
+      "pos4": ""
     },
     {
       "title": "Music 🎸",
       "desc": "Playing instruments and expressing feelings through music.",
       "imageFit": "center",
-      "images": []
+      "images": [],
+      "pos1": "",
+      "pos2": "",
+      "pos3": "",
+      "pos4": ""
     },
     {
       "title": "Workouts 🏋️‍♀️",
@@ -30,7 +38,11 @@
         "/assets/uploads/S__91512843.jpg",
         "/assets/uploads/S__91512845.jpg",
         "/assets/uploads/S__91512846.jpg"
-      ]
+      ],
+      "pos1": "upper",
+      "pos2": "center",
+      "pos3": "center",
+      "pos4": "center"
     },
     {
       "title": "Gaming & Coding",
@@ -41,7 +53,11 @@
         "/assets/uploads/S__91537414.jpg",
         "/assets/uploads/S__91537415.jpg",
         "/assets/uploads/S__91537416.jpg"
-      ]
+      ],
+      "pos1": "left",
+      "pos2": "",
+      "pos3": "",
+      "pos4": ""
     }
   ]
 }
