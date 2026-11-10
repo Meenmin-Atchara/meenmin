@@ -16,6 +16,8 @@
         }
         .hobby-content { animation: fadeIn 0.5s ease-in-out forwards; }
         .icon { width: 1.5rem; height: 1.5rem; }
+        h1, h2, h3 { zoom: var(--hs, 1); }
+        p { zoom: var(--bs, 1); }
         dialog::backdrop { background: rgba(0, 0, 0, 0.88); }
         @media (prefers-reduced-motion: reduce) { .hobby-content { animation: none; } html { scroll-behavior: auto; } }
     </style>
@@ -219,6 +221,11 @@
             // ขนาดตัวอักษรทั้งเว็บ (ตั้งที่หลังบ้าน > ตั้งค่าทั่วไป)
             const SIZE = { small: '87.5%', normal: '100%', large: '112.5%', xlarge: '125%' };
             if (SIZE[s.fontSize]) document.documentElement.style.fontSize = SIZE[s.fontSize];
+            // ขนาดหัวข้อ / ขนาดข้อความ แยกกัน (ตั้งที่หลังบ้าน > ตั้งค่าทั่วไป)
+            const SCALE = { small: 0.85, normal: 1, large: 1.15, xlarge: 1.3 };
+            const root = document.documentElement.style;
+            if (SCALE[s.headingSize]) root.setProperty('--hs', SCALE[s.headingSize]);
+            if (SCALE[s.bodySize]) root.setProperty('--bs', SCALE[s.bodySize]);
             setText('brand-name', s.brandName);
             setText('site-footer', s.footer);
             const h = s.headings || {};
