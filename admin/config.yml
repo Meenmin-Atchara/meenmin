@@ -79,6 +79,17 @@ collections:
             fields:
               - { label: "ชื่อ (ใส่อิโมจิต่อท้ายได้)", name: title, widget: string }
               - { label: "คำอธิบาย", name: desc, widget: text }
+              - label: "การแสดงรูป"
+                name: imageFit
+                widget: select
+                default: center
+                required: false
+                hint: "รูปแนวตั้งถูกตัดหัว/ท้าย ให้ลองเลือก 'เห็นทั้งรูป' หรือ 'เน้นส่วนบน'"
+                options:
+                  - { label: "เต็มกรอบ เน้นตรงกลาง (ค่าเริ่มต้น)", value: center }
+                  - { label: "เต็มกรอบ เน้นส่วนบน (ไม่ตัดหัว)", value: top }
+                  - { label: "เต็มกรอบ เน้นส่วนล่าง", value: bottom }
+                  - { label: "เห็นทั้งรูป (ไม่ตัด มีพื้นที่ว่างข้างรูป)", value: whole }
               - label: "รูปภาพ (สูงสุด 4 รูป)"
                 name: images
                 widget: list
