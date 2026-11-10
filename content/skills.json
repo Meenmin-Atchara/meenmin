@@ -2,19 +2,33 @@
   "items": [
     {
       "title": "System Analysis & Design",
-      "desc": "การวิเคราะห์ ออกแบบ และพัฒนาระบบตามความต้องการ User"
+      "desc": "การวิเคราะห์ ออกแบบ และพัฒนาระบบตามความต้องการ User",
+      "icon": "",
+      "iconImage": ""
+    },
+    {
+      "title": "System Development",
+      "desc": "พัฒนาระบบตามความต้องการ User",
+      "icon": "",
+      "iconImage": ""
     },
     {
       "title": "Testing & Quality Assurance",
-      "desc": "ทดสอบระบบตาม Test case รวมถึงการออกแบบเคสที่ใช้ทดสอบ (Manual Testing)"
+      "desc": "ทดสอบระบบตาม Test case รวมถึงการออกแบบเคสที่ใช้ทดสอบ (Manual Testing)",
+      "icon": "",
+      "iconImage": ""
     },
     {
       "title": "IT Support & Troubleshooting",
-      "desc": "ตรวจสอบแก้ไขปัญหาระบบให้ User รวมถึงอุปกรณ์ IT ต่างๆ"
+      "desc": "ตรวจสอบแก้ไขปัญหาระบบให้ User รวมถึงอุปกรณ์ IT ต่างๆ",
+      "icon": "",
+      "iconImage": ""
     },
     {
       "title": "Database & Reporting",
-      "desc": "การจัดการข้อมูลในฐานข้อมูล เช่น ดึงข้อมูล จัดทำรายงาน วิเคราะห์ปัญหา"
+      "desc": "การจัดการข้อมูลในฐานข้อมูล เช่น ดึงข้อมูล จัดทำรายงาน วิเคราะห์ปัญหา",
+      "icon": "",
+      "iconImage": ""
     }
   ]
 }
