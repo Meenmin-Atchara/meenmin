@@ -32,29 +32,29 @@
     {
       "title": "Workouts 🏋️‍♀️",
       "desc": "Weight training and running.",
-      "imageFit": "bottom",
+      "imageFit": "center",
       "images": [
         "/assets/uploads/S__91512844.jpg",
         "/assets/uploads/S__91512843.jpg",
-        "/assets/uploads/S__91512845.jpg",
-        "/assets/uploads/S__91512846.jpg"
+        "/assets/uploads/S__91537420.jpg",
+        "/assets/uploads/S__91537419.jpg"
       ],
-      "pos1": "center",
-      "pos2": "center",
-      "pos3": "lower",
-      "pos4": "lower"
+      "pos1": "lower",
+      "pos2": "",
+      "pos3": "",
+      "pos4": ""
     },
     {
       "title": "Gaming & Coding",
       "desc": "Exploring virtual worlds and building creative side projects.",
       "imageFit": "center",
       "images": [
-        "/assets/uploads/S__91537417.jpg",
+        "/assets/uploads/S__91537422.jpg",
         "/assets/uploads/S__91537414.jpg",
         "/assets/uploads/S__91537415.jpg",
         "/assets/uploads/S__91537416.jpg"
       ],
-      "pos1": "left",
+      "pos1": "",
       "pos2": "",
       "pos3": "",
       "pos4": ""
