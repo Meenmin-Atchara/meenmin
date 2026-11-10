@@ -41,7 +41,7 @@
       ],
       "pos1": "lower",
       "pos2": "",
-      "pos3": "upper",
+      "pos3": "center",
       "pos4": "upper"
     },
     {
@@ -54,7 +54,7 @@
         "/assets/uploads/S__91537415.jpg",
         "/assets/uploads/S__91537416.jpg"
       ],
-      "pos1": "upper",
+      "pos1": "top",
       "pos2": "",
       "pos3": "",
       "pos4": ""
