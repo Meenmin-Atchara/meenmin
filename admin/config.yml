@@ -29,7 +29,29 @@ collections:
           - { label: "ข้อความท้ายเว็บ (Footer)", name: footer, widget: string }
           - { label: "ปุ่มหลักหน้าแรก (ไม่บังคับ)", name: ctaPrimary, widget: string, required: false }
           - { label: "ปุ่มรองหน้าแรก (ไม่บังคับ)", name: ctaSecondary, widget: string, required: false }
-          - label: "ขนาดตัวอักษรทั้งเว็บ"
+          - label: "ขนาดหัวข้อ (ชื่อใหญ่ หัวข้อแต่ละส่วน ชื่อการ์ด)"
+            name: headingSize
+            widget: select
+            default: normal
+            required: false
+            hint: "ปรับเฉพาะหัวข้อ เว้นว่าง = ปกติ"
+            options:
+              - { label: "เล็ก", value: small }
+              - { label: "ปกติ", value: normal }
+              - { label: "ใหญ่", value: large }
+              - { label: "ใหญ่มาก", value: xlarge }
+          - label: "ขนาดข้อความอธิบาย"
+            name: bodySize
+            widget: select
+            default: normal
+            required: false
+            hint: "ปรับเฉพาะย่อหน้าคำอธิบาย เว้นว่าง = ปกติ"
+            options:
+              - { label: "เล็ก", value: small }
+              - { label: "ปกติ", value: normal }
+              - { label: "ใหญ่", value: large }
+              - { label: "ใหญ่มาก", value: xlarge }
+          - label: "ขนาดตัวอักษรทั้งเว็บ (ปรับทุกอย่างพร้อมกัน)"
             name: fontSize
             widget: select
             default: normal
