@@ -39,10 +39,10 @@
         "/assets/uploads/S__91512845.jpg",
         "/assets/uploads/S__91512846.jpg"
       ],
-      "pos1": "upper",
+      "pos1": "center",
       "pos2": "center",
-      "pos3": "center",
-      "pos4": "center"
+      "pos3": "lower",
+      "pos4": "lower"
     },
     {
       "title": "Gaming & Coding",
