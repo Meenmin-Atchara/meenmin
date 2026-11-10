@@ -24,7 +24,7 @@
     {
       "title": "Workouts 🏋️‍♀️",
       "desc": "Weight training and running.",
-      "imageFit": "whole",
+      "imageFit": "bottom",
       "images": [
         "/assets/uploads/S__91512844.jpg",
         "/assets/uploads/S__91512843.jpg",
@@ -35,7 +35,7 @@
     {
       "title": "Gaming & Coding",
       "desc": "Exploring virtual worlds and building creative side projects.",
-      "imageFit": "center",
+      "imageFit": "bottom",
       "images": [
         "/assets/uploads/S__91537412.jpg",
         "/assets/uploads/S__91537414.jpg",
