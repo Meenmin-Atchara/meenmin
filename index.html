@@ -391,12 +391,17 @@
             // รูปแบบการแสดงรูป: whole = เห็นทั้งรูป, top = เต็มกรอบเน้นส่วนบน, center = เต็มกรอบเน้นกลาง (ค่าเริ่มต้น)
             const FIT = { whole: 'object-contain', top: 'object-cover object-top', center: 'object-cover object-center', bottom: 'object-cover object-bottom' };
             const fit = FIT[cur.imageFit] || FIT.center;
+            // ตำแหน่งเฉพาะรูปที่ 1-4 (pos1..pos4) ถ้าตั้งไว้จะใช้แทนค่าของทั้งงานอดิเรก
+            const POS = { top: '50% 0%', upper: '50% 25%', center: '50% 50%', lower: '50% 75%', bottom: '50% 100%', left: '0% 50%', right: '100% 50%' };
             const slots = [0, 1, 2, 3].map((i) => {
+                const own = cur['pos' + (i + 1)];
+                const imgCls = own === 'whole' ? 'object-contain' : (POS[own] ? 'object-cover' : fit);
+                const imgStyle = POS[own] ? ` style="object-position:${POS[own]}"` : '';
                 const src = safeUrl((cur.images || [])[i]);
                 return `
                     <div class="aspect-[4/3] bg-neutral-900 border border-neutral-800 rounded-2xl flex items-center justify-center text-neutral-600 text-sm overflow-hidden shadow-inner">
                         ${src
-                            ? `<img src="${esc(src)}" alt="${esc(cur.title)}" loading="lazy" class="w-full h-full ${fit}">`
+                            ? `<img src="${esc(src)}" alt="${esc(cur.title)}" loading="lazy" class="w-full h-full ${imgCls}"${imgStyle}>`
                             : `<span class="text-center p-2">[ รูป ${i + 1} ]</span>`}
                     </div>`;
             }).join('');
