@@ -21,9 +21,9 @@
     {
       "title": "อบรมหลักสูตร Power BI",
       "issuer": "",
-      "date": "เมษายน 2024",
+      "date": "20-21 เมษายน 2024",
       "desc": "ภาพรวม power BI ,การสร้างรายงาน, การ Import ข้อมูล และการจัดการข้อมูล",
-      "image": "",
+      "image": "/assets/uploads/Power BI.png",
       "link": "",
       "linkLabel": ""
     },
@@ -39,9 +39,9 @@
     {
       "title": "อบรม Business transformation by google workspace",
       "issuer": "",
-      "date": "กรกฏาคม 2023",
+      "date": "27 กรกฏาคม 2023",
       "desc": "เนื้อหา :\n- ความรู้พื้นฐานในการทํา Digital Transformation for Business ขององค์กร\nภายใต้การทํางานแบบ Google Workspace Collaboration Model\n- แนวทางการทํา Digital Transformation for Business ในอุตสาหกรรมต่าง ๆ\n- แนวทางในการวิเคราะห์กระบวนการทํางานเดิม เพื่อพัฒนาและต่อยอด ด้วยเทคนิคในการเลือกใช้",
-      "image": "",
+      "image": "/assets/uploads/Digital Transformation for Business.png",
       "link": "",
       "linkLabel": ""
     },
