@@ -25,13 +25,13 @@
       "imageFit": "center",
       "images": [
         "/assets/uploads/S__91537451.jpg",
-        "/assets/uploads/S__91537452.jpg",
         "/assets/uploads/S__91537456.jpg",
+        "/assets/uploads/S__91537452.jpg",
         "/assets/uploads/bandlab.png"
       ],
       "pos1": "",
       "pos2": "",
-      "pos3": "",
+      "pos3": "lower",
       "pos4": ""
     },
     {
