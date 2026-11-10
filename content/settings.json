@@ -5,6 +5,8 @@
   "footer": "© 2023 By Meenmin-Atchara.",
   "ctaPrimary": "",
   "ctaSecondary": "",
+  "headingSize": "normal",
+  "bodySize": "small",
   "fontSize": "small",
   "accent": "",
   "headings": {
