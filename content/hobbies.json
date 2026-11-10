@@ -42,7 +42,7 @@
       "pos1": "lower",
       "pos2": "",
       "pos3": "center",
-      "pos4": "upper"
+      "pos4": "top"
     },
     {
       "title": "Gaming & Coding",
@@ -54,7 +54,7 @@
         "/assets/uploads/S__91537415.jpg",
         "/assets/uploads/S__91537416.jpg"
       ],
-      "pos1": "top",
+      "pos1": "lower",
       "pos2": "",
       "pos3": "",
       "pos4": ""
