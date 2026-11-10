@@ -21,8 +21,26 @@
     },
     {
       "category": "System Development",
+      "title": "ระบบโปรแกรมต่อแห FS_Net (ส่วนงาน Front-end )",
+      "desc": "ระบบโปรแกรมต่อแห เป็นโปรแกรมที่ใช้ภายในโรงงานส่วนงานแผนกต่อแห ใช้เพื่อสร้าง แก้ไข บันทึกRunning ,จ่ายออกสาขา ,รับเข้าจากสาขา ,จ่ายคลังสินค้า และออกรายงาน เนื้อหาบางส่วนเป็นความลับของทางบริษัท จึงไม่สามารถเผยแพร่ได้ อ้างอิงหน้าการใช้งานได้เพียงบางส่วนเท่านั้น ผู้จัดทำได้มีส่วนร่วมในการเขียนและ\nออกแบบ Front-end ภายในระบบให้กับเพื่อนร่วมทีมโปรแกรมเมอร์ (ปี 2564)",
+      "tag": "CSS ,HTML , JavaScript",
+      "image": "/assets/uploads/FS_Net.png",
+      "link": "https://drive.google.com/file/d/1eeJvqrqPJGFjour86Vnm9LNQq8wne-wM/view?usp=sharing",
+      "linkLabel": ""
+    },
+    {
+      "category": "System Development",
+      "title": "ระบบโปรแกรมบาร์โค้ดโรงงาน BarcodeSoft Printing",
+      "desc": "ระบบโปรแกรมบาร์โค้ดโรงงาน (BarcodeSoft Printing) เป็นโปรแกรมที่ใช้ภายในโรงงานส่วนงานแผนกทอ เพื่อออกบาร์โค้ดตามเลขออเดอร์ (Order) ของแต่ละอาคารทอ โดยจะติดบาร์โค้ด (Barcode) ที่ได้กับอวน ก่อนจะถูกส่งต่อไปยังแผนกต่าง ๆ ตามขั้นตอนการทำงานภายในโรงงาน เนื้อหาบางส่วนเป็นความลับของทางบริษัท ไม่สามารถนำมาเผยแพร่ได้ อ้างอิงหน้าการใช้งานได้เพียงบางส่วนเท่านั้น (ปี 2564)",
+      "tag": "PHP ,CSS ,HTML ,SQL,JavaScript,Laravel Framework V8",
+      "image": "/assets/uploads/BarcodeSoft Printing.png",
+      "link": "https://drive.google.com/file/d/16qcTeGNxBd8ehAIHpMfWorX9v0wA0gki/view?usp=sharing",
+      "linkLabel": ""
+    },
+    {
+      "category": "System Development",
       "title": "Enhancing the Performance of ECP’s Website for Mobile Devices based  on Responsive Web Design Approach",
-      "desc": "การเพิ่มประสิทธิภาพสําหรับการจัดการเว็บสาขาวิชาวิศวกรรมคอมพิวเตอร์\nผ่านอุปกรณ์โทรศัพท์มือถือ ด้วยทฤษฎี Responsive Web Design จัดทําขึ้นเพื่อใช้ในสาขาวิชาวิศวกรรมคอมพิวเตอร์ ตามมติประชุมของ คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน วิทยาเขตขอนแก่น ว่าด้วยเรื่องของการจัดทําเว็บไซต์ (Website) ของแต่ละสาขาวิชา ในคณะวิศวกรรมศาสตร์ โดยโปรเจคนี้จะเน้นไปในเรื่องของการออกแบบหน้าเว็บไซต์ (Website) และการจัดวางเนื้อหาที่เกี่ยวข้องกับสาขาวิชาวิศวกรรมคอมพิวเตอร์ (ปี 2563)",
+      "desc": "การเพิ่มประสิทธิภาพสําหรับการจัดการเว็บสาขาวิชาวิศวกรรมคอมพิวเตอร์ ผ่านอุปกรณ์โทรศัพท์มือถือ ด้วยทฤษฎี Responsive Web Design จัดทําขึ้นเพื่อใช้ในสาขาวิชาวิศวกรรมคอมพิวเตอร์ ตามมติประชุมของ คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน วิทยาเขตขอนแก่น ว่าด้วยเรื่องของการจัดทําเว็บไซต์ (Website) ของแต่ละสาขาวิชาในคณะวิศวกรรมศาสตร์ โดยเน้นไปในเรื่องของการออกแบบหน้าเว็บไซต์ (Website) และการจัดวางเนื้อหาที่เกี่ยวข้องกับสาขาวิชาวิศวกรรมคอมพิวเตอร์ (ปี 2563)",
       "tag": "CSS ,HTML , JavaScript",
       "image": "/assets/uploads/Responsive Web Design of ECP Website.png",
       "link": "https://drive.google.com/file/d/1OAn1-B_C5IPv3T5iddqVbZZ9Dnmn0ZhZ/view?usp=sharing",
