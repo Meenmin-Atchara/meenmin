@@ -118,6 +118,58 @@ collections:
                 max: 4
                 required: false
                 field: { label: "รูป", name: image, widget: image }
+              - label: "รูปที่ 1 — ตำแหน่ง (ไม่บังคับ ถ้าเว้นว่างจะใช้ค่าด้านบน)"
+                name: pos1
+                widget: select
+                required: false
+                options:
+                  - { label: "เลื่อนไปบนสุด (ไม่ตัดหัว)", value: top }
+                  - { label: "เลื่อนขึ้นเล็กน้อย", value: upper }
+                  - { label: "ตรงกลาง", value: center }
+                  - { label: "เลื่อนลงเล็กน้อย", value: lower }
+                  - { label: "เลื่อนไปล่างสุด", value: bottom }
+                  - { label: "เลื่อนไปทางซ้าย", value: left }
+                  - { label: "เลื่อนไปทางขวา", value: right }
+                  - { label: "เห็นทั้งรูป (ไม่ตัด)", value: whole }
+              - label: "รูปที่ 2 — ตำแหน่ง (ไม่บังคับ ถ้าเว้นว่างจะใช้ค่าด้านบน)"
+                name: pos2
+                widget: select
+                required: false
+                options:
+                  - { label: "เลื่อนไปบนสุด (ไม่ตัดหัว)", value: top }
+                  - { label: "เลื่อนขึ้นเล็กน้อย", value: upper }
+                  - { label: "ตรงกลาง", value: center }
+                  - { label: "เลื่อนลงเล็กน้อย", value: lower }
+                  - { label: "เลื่อนไปล่างสุด", value: bottom }
+                  - { label: "เลื่อนไปทางซ้าย", value: left }
+                  - { label: "เลื่อนไปทางขวา", value: right }
+                  - { label: "เห็นทั้งรูป (ไม่ตัด)", value: whole }
+              - label: "รูปที่ 3 — ตำแหน่ง (ไม่บังคับ ถ้าเว้นว่างจะใช้ค่าด้านบน)"
+                name: pos3
+                widget: select
+                required: false
+                options:
+                  - { label: "เลื่อนไปบนสุด (ไม่ตัดหัว)", value: top }
+                  - { label: "เลื่อนขึ้นเล็กน้อย", value: upper }
+                  - { label: "ตรงกลาง", value: center }
+                  - { label: "เลื่อนลงเล็กน้อย", value: lower }
+                  - { label: "เลื่อนไปล่างสุด", value: bottom }
+                  - { label: "เลื่อนไปทางซ้าย", value: left }
+                  - { label: "เลื่อนไปทางขวา", value: right }
+                  - { label: "เห็นทั้งรูป (ไม่ตัด)", value: whole }
+              - label: "รูปที่ 4 — ตำแหน่ง (ไม่บังคับ ถ้าเว้นว่างจะใช้ค่าด้านบน)"
+                name: pos4
+                widget: select
+                required: false
+                options:
+                  - { label: "เลื่อนไปบนสุด (ไม่ตัดหัว)", value: top }
+                  - { label: "เลื่อนขึ้นเล็กน้อย", value: upper }
+                  - { label: "ตรงกลาง", value: center }
+                  - { label: "เลื่อนลงเล็กน้อย", value: lower }
+                  - { label: "เลื่อนไปล่างสุด", value: bottom }
+                  - { label: "เลื่อนไปทางซ้าย", value: left }
+                  - { label: "เลื่อนไปทางขวา", value: right }
+                  - { label: "เห็นทั้งรูป (ไม่ตัด)", value: whole }
 
       # ------------------------------------------------------------
       - name: experience
