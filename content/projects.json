@@ -60,7 +60,7 @@
       "title": "ระบบติดตามงานและแจ้งเตือนด้วย LINE Notify",
       "desc": "วิเคราะห์หัวข้อและเงื่อนไขที่ต้องติดตาม เก็บความต้องการของผู้ใช้ ออกแบบเงื่อนไขและวิธีการแจ้งเตือน และพัฒนาด้วย JavaScript เพื่อช่วยลดการแจ้งเตือนไปยังกลุ่มต่างๆ ผ่านปฏิทิน (ระบบสิ้นสุดตามการยุติบริการของ LINE Notify) (ปี 2023–2024)",
       "tag": "JavaScript / LINE Notify / Workflow Design",
-      "image": "",
+      "image": "/assets/uploads/LINE Notify.png",
       "link": "",
       "linkLabel": ""
     },
@@ -69,7 +69,7 @@
       "title": "LINE Chatbot",
       "desc": "ศึกษาและวิเคราะห์รายงานที่ต้องนำมาใช้ ออกแบบรูปแบบรายงานและ Visualization ด้วย Data Studio ออกแบบ Rich Menu, Card Message และ Flow การใช้งานของ LINE Chatbot จัดทำคู่มือและทดสอบการใช้งาน ต่อมาปรับเป็นแชตบอตตอบคำถามสำหรับพนักงาน (ปี 2023)",
       "tag": "LINE Chatbot / Data Studio / Documentation",
-      "image": "",
+      "image": "/assets/uploads/LINE Chatbot.png",
       "link": "",
       "linkLabel": ""
     },
