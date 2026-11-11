@@ -2,19 +2,28 @@
   "linkLabel": "ดูรายละเอียด →",
   "items": [
     {
-      "category": "Data Analysis & Validation",
-      "title": "การวิเคราะห์และการตรวจสอบความถูกต้องของข้อมูล",
-      "desc": "ดึงข้อมูล วิเคราะห์และตรวจสอบความถูกต้องของข้อมูล",
-      "tag": "Database / MIS",
+      "category": "Business Analysis & Data",
+      "title": "Master Data Packaging (Phase 1.5 / Phase 2)",
+      "desc": "วิเคราะห์ ออกแบบ รวบรวมและเก็บข้อมูลความต้องการ หลักการ บรรจุภัณฑ์ ทดสอบ และเตรียมข้อมูลสำหรับ Import เข้าระบบ (ปี 2024–2026)",
+      "tag": "Analysis / Data Collection / Testing",
       "image": "",
       "link": "",
       "linkLabel": ""
     },
     {
-      "category": "Testing & Support",
-      "title": "การออกแบบ Test Case และทดสอบระบบ",
-      "desc": "การเขียนเคสทดสอบ ตรวจสอบระบบ และแก้ปัญหาการใช้งานให้ผู้ใช้ได้อย่างมีประสิทธิภาพ",
-      "tag": "Manual Testing",
+      "category": "Data Analysis & Validation",
+      "title": "Product Code Management",
+      "desc": "วิเคราะห์โครงสร้าง ผลกระทบ แนวทาง ตรวจสอบความถูกต้องของข้อมูล ออกแบบ Test case และทดสอบแบบ Manual พร้อมสนับสนุนการตรวจสอบก่อน Go-live (ปี 2024–2026)",
+      "tag": "Data Validation / Manual Testing",
+      "image": "",
+      "link": "",
+      "linkLabel": ""
+    },
+    {
+      "category": "Testing & User Support",
+      "title": "Customer Service System",
+      "desc": "รับผิดชอบการทดสอบระบบและสนับสนุนผู้ใช้งาน รับแจ้งปัญหา วิเคราะห์สาเหตุ (ส่วนของ User ขายต่างประเทศ) และประสานงานทีมพัฒนาเพื่อแก้ไข",
+      "tag": "Manual Testing / User Support",
       "image": "",
       "link": "",
       "linkLabel": ""
