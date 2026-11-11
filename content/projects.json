@@ -2,6 +2,15 @@
   "linkLabel": "ดูรายละเอียด →",
   "items": [
     {
+      "category": "Business Analysis & Requirements Gathering",
+      "title": "Shipment Plan For Export",
+      "desc": "รวบรวมและวิเคราะห์ความต้องการของเจ้าหน้าที่ฝ่ายส่งออก สอบถามข้อมูลเพิ่มเติมเกี่ยวกับกระบวนการทำงานและปัญหาที่พบ จัดทำเอกสารความต้องการเพื่อขอปรับปรุงระบบ นำเสนอในที่ประชุมสรุปงานพัฒนาระบบ และประสานงานกับ IT และ Outsource (ปี 2025–2026)",
+      "tag": "Requirements / Coordination / Analysis",
+      "image": "",
+      "link": "",
+      "linkLabel": ""
+    },
+    {
       "category": "Business Analysis & Data",
       "title": "Master Data Packaging (Phase 1.5 / Phase 2)",
       "desc": "วิเคราะห์ ออกแบบ รวบรวมและเก็บข้อมูลความต้องการ หลักการ บรรจุภัณฑ์ ทดสอบ และเตรียมข้อมูลสำหรับ Import เข้าระบบ (ปี 2024–2026)",
@@ -15,6 +24,24 @@
       "title": "Product Code Management",
       "desc": "วิเคราะห์โครงสร้าง ผลกระทบ แนวทาง ตรวจสอบความถูกต้องของข้อมูล ออกแบบ Test case และทดสอบแบบ Manual พร้อมสนับสนุนการตรวจสอบก่อน Go-live (ปี 2024–2026)",
       "tag": "Data Validation / Manual Testing",
+      "image": "",
+      "link": "",
+      "linkLabel": ""
+    },
+    {
+      "category": "Development",
+      "title": "ระบบติดตามงานและแจ้งเตือนด้วย LINE Notify",
+      "desc": "วิเคราะห์หัวข้อและเงื่อนไขที่ต้องติดตาม เก็บความต้องการของผู้ใช้ ออกแบบเงื่อนไขและวิธีการแจ้งเตือน และพัฒนาด้วย JavaScript เพื่อช่วยลดการแจ้งเตือนไปยังกลุ่มต่างๆ ผ่านปฏิทิน (ระบบสิ้นสุดตามการยุติบริการของ LINE Notify) (ปี 2023–2024)",
+      "tag": "JavaScript / LINE Notify / Workflow Design",
+      "image": "",
+      "link": "",
+      "linkLabel": ""
+    },
+    {
+      "category": "Development",
+      "title": "LINE Chatbot",
+      "desc": "ศึกษาและวิเคราะห์รายงานที่ต้องนำมาใช้ ออกแบบรูปแบบรายงานและ Visualization ด้วย Data Studio ออกแบบ Rich Menu, Card Message และ Flow การใช้งานของ LINE Chatbot จัดทำคู่มือและทดสอบการใช้งาน ต่อมาปรับเป็นแชตบอตตอบคำถามสำหรับพนักงาน (ปี 2023)",
+      "tag": "LINE Chatbot / Data Studio / Documentation",
       "image": "",
       "link": "",
       "linkLabel": ""
