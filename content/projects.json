@@ -2,6 +2,33 @@
   "linkLabel": "ดูรายละเอียด →",
   "items": [
     {
+      "category": "Personal Project",
+      "title": "PM Field Report",
+      "desc": "ระบบ POS และจัดการคิวหลังบ้านสำหรับร้านกาแฟ เลือกเมนูและระดับความหวาน ระบุหมายเหตุเพิ่มเติม คำนวณราคาอัตโนมัติ รองรับชำระผ่าน PromptPay QR และมีหน้าจอคิวในครัวแบบ Real-time พร้อมแดชบอร์ดสรุปยอดขาย (ปี 2026)",
+      "tag": "Next.js / TypeScript / Tailwind CSS",
+      "image": "/assets/uploads/PM FIELD REPORT.png",
+      "link": "https://pm-report-two.vercel.app/",
+      "linkLabel": ""
+    },
+    {
+      "category": "Personal Project",
+      "title": "OrderBrew: ระบบรับออเดอร์ร้านเครื่องดื่ม",
+      "desc": "ระบบ POS และจัดการคิวหลังบ้านสำหรับร้านกาแฟ เลือกเมนูและระดับความหวาน ระบุหมายเหตุเพิ่มเติม คำนวณราคาอัตโนมัติ รองรับชำระผ่าน PromptPay QR และมีหน้าจอคิวในครัวแบบ Real-time พร้อมแดชบอร์ดสรุปยอดขาย (ปี 2026)",
+      "tag": "Next.js / TypeScript / Tailwind CSS",
+      "image": "/assets/uploads/OrderBrew.png",
+      "link": "https://order-brew.vercel.app/",
+      "linkLabel": ""
+    },
+    {
+      "category": "Personal Project",
+      "title": "Expense Tracker: ระบบบัญชีรายรับ-รายจ่าย",
+      "desc": "Web Application (เว็บแอปพลิเคชัน) สำหรับบริหารจัดการการเงินส่วนบุคคล บันทึกและวิเคราะห์รายรับ-รายจ่ายส่วนบุคคล มีแถบเพิ่มรายการด่วน สรุปยอดคงเหลือแบบ Real-time กราฟเปรียบเทียบรายรับ-รายจ่ายและสัดส่วนตามหมวดหมู่ และส่งออกข้อมูลเป็น CSV หรือ PDF (ปี 2026)",
+      "tag": "React / Chart.js / TypeScript",
+      "image": "/assets/uploads/Expense Tracker.png",
+      "link": "https://expense-tracker-taupe-tau-51.vercel.app/",
+      "linkLabel": ""
+    },
+    {
       "category": "Business Analysis & Requirements Gathering",
       "title": "Shipment Plan For Export",
       "desc": "รวบรวมและวิเคราะห์ความต้องการของเจ้าหน้าที่ฝ่ายส่งออก สอบถามข้อมูลเพิ่มเติมเกี่ยวกับกระบวนการทำงานและปัญหาที่พบ จัดทำเอกสารความต้องการเพื่อขอปรับปรุงระบบ นำเสนอในที่ประชุมสรุปงานพัฒนาระบบ และประสานงานกับ IT และ Outsource (ปี 2025–2026)",
