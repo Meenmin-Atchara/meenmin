@@ -1,7 +1,16 @@
 {
   "items": [
     {
-      "title": "Data + AI for Communication: PDPA การคุ้มครองข้อมูลส่วนบุคคล เตรียมความพร้อมเพื่อโอกาสทางธุรกิจ",
+      "title": "Cybersecurity Principle for Technology Practitioners | การรักษาความปลอดภัยไซเบอร์สำหรับผู้ปฏิบัติงานด้านเทคโนโลยี",
+      "issuer": "Thai MOOC",
+      "date": "13 พฤศจิกายน 2026",
+      "desc": "",
+      "image": "/assets/uploads/Cybersecurity Principle for Technology Practitioners.png",
+      "link": "",
+      "linkLabel": ""
+    },
+    {
+      "title": "Data + AI for Communication: PDPA | การคุ้มครองข้อมูลส่วนบุคคล เตรียมความพร้อมเพื่อโอกาสทางธุรกิจ",
       "issuer": "Thai MOOC",
       "date": "6 พฤศจิกายน 2026",
       "desc": "",
