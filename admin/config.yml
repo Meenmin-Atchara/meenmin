@@ -51,6 +51,11 @@ collections:
               - { label: "ปกติ", value: normal }
               - { label: "ใหญ่", value: large }
               - { label: "ใหญ่มาก", value: xlarge }
+          - label: "ตัวนับผู้เข้าชม: ชื่อบัญชี GoatCounter (ไม่บังคับ)"
+            name: goatcounter
+            widget: string
+            required: false
+            hint: "เช่น ถ้าลิงก์คือ meenmin.goatcounter.com ให้ใส่ meenmin เว้นว่าง = ไม่นับ"
           - label: "ขนาดตัวอักษรทั้งเว็บ (ปรับทุกอย่างพร้อมกัน)"
             name: fontSize
             widget: select
