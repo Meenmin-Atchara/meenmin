@@ -143,7 +143,10 @@
     </section>
 
     <!-- Footer -->
-    <footer id="site-footer" class="py-8 px-6 text-center text-xs text-neutral-600 border-t border-neutral-900"></footer>
+    <footer class="py-8 px-6 text-center text-xs text-neutral-600 border-t border-neutral-900">
+        <p id="site-footer"></p>
+        <p id="visit-count" class="mt-2 hidden"></p>
+    </footer>
 
     <!-- ดูรูปขยาย -->
     <dialog id="lightbox" aria-label="รูปขยาย" class="m-auto bg-transparent p-0 max-w-[96vw] max-h-[94vh] overflow-visible text-white">
@@ -215,6 +218,30 @@
             return 'spark';
         }
 
+        // ---------- ตัวนับผู้เข้าชม (GoatCounter) ----------
+        // ใส่ชื่อบัญชีที่หลังบ้าน > ตั้งค่าทั่วไป ถ้าเว้นว่างจะไม่นับและไม่แสดง
+        function setupCounter(code) {
+            code = String(code || '').trim().toLowerCase();
+            if (!/^[a-z0-9-]{2,}$/.test(code)) return;
+            const local = ['localhost', '127.0.0.1', ''].includes(location.hostname);
+            if (!local) {
+                const sc = document.createElement('script');
+                sc.async = true;
+                sc.dataset.goatcounter = `https://${code}.goatcounter.com/count`;
+                sc.src = 'https://gc.zgo.at/count.js';
+                document.head.appendChild(sc);
+            }
+            fetch(`https://${code}.goatcounter.com/counter/TOTAL.json`)
+                .then((r) => (r.ok ? r.json() : Promise.reject()))
+                .then((d) => {
+                    if (!d || d.count == null) return;
+                    const el = $('visit-count');
+                    el.textContent = `ผู้เข้าชม ${d.count} ครั้ง`;
+                    el.classList.remove('hidden');
+                })
+                .catch(() => {});
+        }
+
         // ---------- แต่ละส่วนของหน้า ----------
         function renderSettings(s) {
             document.title = s.pageTitle || document.title;
@@ -228,6 +255,7 @@
             if (SCALE[s.bodySize]) root.setProperty('--bs', SCALE[s.bodySize]);
             setText('brand-name', s.brandName);
             setText('site-footer', s.footer);
+            setupCounter(s.goatcounter);
             const h = s.headings || {};
             setText('experience-title', h.experience);
             setText('education-title', h.education);
