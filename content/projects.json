@@ -4,6 +4,15 @@
     {
       "category": "Personal Project",
       "title": "PM Field Report",
+      "desc": "ระบบจัดการร้านก๋วยเตี๋ยว ลูกค้าสามารถแสกนสั่งอาหารที่โต๊ะได้ ดูสถานะการสั่ง เรียกเก็บเงินผ่านหน้าจอได้ ในส่วนหลังร้าน สามารถรับออเดอร์จากลูกค้าที่สั่งผ่าน qr code ที่โต๊ะหรือพนักงานกดรับเมนูได้ที่ระบบ ดูคิวการสั่ง เก็บเงินทั้งแบบ pomtpayและเงินสดได้ มีหน้าจอรวบรวมข้อมูลการขายในแต่ละวันตามออเดอร์เพื่อนำไปวิเคราะห์ข้อมูลวางแผนการตลาดด้านอื่น ๆ ได้ (ปี 2026)",
+      "tag": "JavaScript / CSS / SQL / HTML",
+      "image": "/assets/uploads/ระบบจัดการร้านก๋วยเตี๋ยว.png",
+      "link": "https://m-noodle-five.vercel.app/",
+      "linkLabel": "Live Demo"
+    },
+    {
+      "category": "Personal Project",
+      "title": "PM Field Report",
       "desc": "ระบบ POS และจัดการคิวหลังบ้านสำหรับร้านกาแฟ เลือกเมนูและระดับความหวาน ระบุหมายเหตุเพิ่มเติม คำนวณราคาอัตโนมัติ รองรับชำระผ่าน PromptPay QR และมีหน้าจอคิวในครัวแบบ Real-time พร้อมแดชบอร์ดสรุปยอดขาย (ปี 2026)",
       "tag": "Next.js / TypeScript / Tailwind CSS",
       "image": "/assets/uploads/PM FIELD REPORT.png",
