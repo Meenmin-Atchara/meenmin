@@ -59,7 +59,7 @@
       "issuer": "",
       "date": "27 กรกฏาคม 2023",
       "desc": "เนื้อหา :\n- ความรู้พื้นฐานในการทํา Digital Transformation for Business ขององค์กร\nภายใต้การทํางานแบบ Google Workspace Collaboration Model\n- แนวทางการทํา Digital Transformation for Business ในอุตสาหกรรมต่าง ๆ\n- แนวทางในการวิเคราะห์กระบวนการทํางานเดิม เพื่อพัฒนาและต่อยอด ด้วยเทคนิคในการเลือกใช้",
-      "image": "/assets/uploads/Digital Transformation for Business.png",
+      "image": "/assets/uploads/Business transformation.png",
       "link": "",
       "linkLabel": ""
     },
@@ -104,7 +104,16 @@
       "issuer": "มหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน วิทยาเขตขอนแก่น",
       "date": "มีนาคม 2018",
       "desc": "",
-      "image": "",
+      "image": "/assets/uploads/TGKK.png",
+      "link": "",
+      "linkLabel": ""
+    },
+    {
+      "title": "อบรมเชิงปฏิบัติการ การสืบค้นสารสนเทศทางวิชาการ",
+      "issuer": "มหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน วิทยาเขตขอนแก่น",
+      "date": "5 พฤศจิกายน 2016",
+      "desc": "",
+      "image": "/assets/uploads/การสืบค้นสารสนเทศ.png",
       "link": "",
       "linkLabel": ""
     }
